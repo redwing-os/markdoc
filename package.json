@@ -1,0 +1,22 @@
+{
+  "name": "redwing_markdoc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@tailwindcss/typography": "^0.5.10",
+    "common": "^0.2.5",
+    "express": "^4.18.2",
+    "highlight.js": "^11.9.0",
+    "markdoc": "^0.1.3",
+    "marked": "^11.0.0",
+    "mustache": "^4.2.0"
+  }
+}

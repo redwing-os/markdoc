@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/main.css">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.1/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css/github-markdown.css">
+  <link href="https://cdn.jsdelivr.net/npm/flowbite/dist/flowbite.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <title>VectorDB Documentation</title>
+</head>
+<body>
+  <div class="header">
+    <div class="logo">
+      <!-- <img src="/path-to-your-logo.png" alt="Logo" height="30"> -->
+      <span><b><a href="https://www.redwing.ai">Redwing</a></b></span>
+      <span><a href="https://www.redwing.ai"> | Docs</a></span>
+    </div>
+    <nav>
+      <a href="https://redwing.ai">Home</a>
+      &nbsp;&nbsp;|&nbsp;&nbsp; 
+      <a target="_blank" href="https://redwing-os.github.io/docs/rust_server/index.html">Rust</a><br>
+    </nav>
+  </div>
+  <div class="container">
+    <div class="sidebar">
+      <!-- Navigation links here -->
+      <a href="#python">Python</a><br>
+      <a href="#csharp">C#</a><br>
+      <a href="#java">Java</a><br>
+      <a href="#cpp">C++</a><br>
+      <a href="#ruby">Ruby</a><br>
+      <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
+      <span>v1.0.5</span>      
+      <!-- Add more links as needed -->
+    </div>
+    
+    <div class="main-content">
+        <div class="main-content bg-white p-6 overflow-y-auto">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">VectorDB Integration</h2>
+            <p class="text-gray-600 mb-4">
+              This guide provides an overview of the VectorDB integration process. It's designed to help you understand the functionality of the client library and how to implement it within your application.
+            </p>
+          
+            <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
+
+            <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-2">Initialization</h3>
+            <p class="text-gray-600 mb-4">
+              To begin interaction with VectorDB, initialize the client stub. This stub will be your gateway to performing data operations such as create, read, update, and delete.
+            </p>
+          
+            <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
+
+            <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-2">Writing Data</h3>
+            <p class="text-gray-600 mb-4">
+              The write operation enables you to store vector data associated with a unique key. It's a simple yet powerful way to add new entries to your database.
+            </p>
+          
+            <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
+
+            <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-2">Reading Data</h3>
+            <p class="text-gray-600 mb-4">
+              Reading data is as straightforward as it sounds. By providing the unique key, you can retrieve the associated vector from the database.
+            </p>
+          
+            <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
+
+            <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-2">Updating Data</h3>
+            <p class="text-gray-600 mb-4">
+              Need to make changes? The update operation allows you to modify an existing vector, ensuring your data remains accurate and up-to-date.
+            </p>
+          
+            <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
+
+            <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-2">Deleting Data</h3>
+            <p class="text-gray-600 mb-4">
+              When a vector is no longer needed, the delete operation removes it from the database, freeing up space and keeping your dataset clean.
+            </p>
+          
+            <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
+
+            <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-2">Batch Operations</h3>
+            <p class="text-gray-600 mb-4">
+              For efficiency, batch operations allow you to perform multiple writes or updates in a single request. This is particularly useful when dealing with large data sets.
+            </p>
+          
+            <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
+
+            <p class="text-gray-600 mb-4">
+              Each section of the code corresponds to these operations and provides a practical example of how to execute them. Explore the code snippets on the right to see these operations in action.
+            </p>
+          </div>
+        <div class="main-content bg-white p-6 overflow-y-auto">
+            <!-- ... other content ... -->
+
+            <!-- Container for cards -->
+            <div class="flex justify-between space-x-4 mt-6">
+              <!-- First Card -->
+                <div class="flex-1 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+                    <img class="rounded-t-lg" src="/path-to-your-image.jpg" alt="">
+                    <div class="p-5">
+                    <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Visit AWS Marketplace</h5>
+                    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Get started with our deployable AMI today.</p>
+                    <a href="https://aws.amazon.com/marketplace/pp/prodview-y2jhov2jzjryk" class="bottomcard inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                        Visit Marketplace
+                        <svg class="ml-2 -mr-1 h-4 w-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16z" clip-rule="evenodd"></path></svg>
+                    </a>
+                    </div>    
+                </div>
+                <!-- Second Card -->
+                <div class="flex-1 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+                <img class="rounded-t-lg" src="/path-to-your-image.jpg" alt="">
+                    <div class="p-5">
+                    <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Github Source</h5>
+                    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">View and download client source code in Github.</p>
+                    <a href="https://www.github.com/redwing-os" class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                        Get Started
+                        <svg class="ml-2 -mr-1 h-4 w-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16z" clip-rule="evenodd"></path></svg>
+                    </a>
+                    </div>
+                </div>
+            </div>
+        </div>                     
+    </div>
+    <div class="code-content markdown-body">
+        {{{htmlContent}}}
+    </div>
+  </div>
+  <script>
+    document.querySelectorAll('.sidebar a').forEach(link => {
+      link.addEventListener('click', function(event) {
+        event.preventDefault();
+  
+        const language = this.getAttribute('href').substring(1);
+        const markdownPath = `/docs/${language}.markdoc`;
+  
+        fetch(markdownPath)
+          .then(response => {
+            if (!response.ok) {
+              throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.text();
+          })
+          .then(markdown => {
+            const htmlContent = marked.parse(markdown); // Use `parse` method
+            document.querySelector('.code-content').innerHTML = htmlContent;
+          })
+          .catch(error => {
+            console.error('Error fetching the markdown content:', error);
+          });
+      });
+    });
+  </script>
+  
+</body>
+</html>
