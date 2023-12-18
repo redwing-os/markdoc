@@ -1,0 +1,66 @@
+# Transaction Fraud Anomaly Detection
+
+```
+python3 run/transaction_fraud_anomaly.py
+```
+
+This Python script in our Sandbox demonstrates how to generate, store, and analyze transaction data using gRPC with our VectorDB service. Below are the main functionalities of the script:
+
+## Generating Transactions
+The generate_transactions function creates a specified number of normal and anomalous transactions. Each transaction includes a random amount, time, and location ID.
+
+```
+def generate_transactions(num_normal, num_anomalous):
+    # ... Function details ...
+```
+
+
+`Normal Transactions`: Random amounts between 10 and 1,000.
+
+`Anomalous Transactions`: Larger random amounts between 5,000 and 10,000.
+
+## gRPC Communication
+
+Establishes a gRPC channel to VectorDB and writes the generated transactions to the database.
+
+```
+# Setup gRPC channel and create a stub (client)
+channel = grpc.insecure_channel('localhost:50051')
+stub = vectordb_pb2_grpc.VectorDBStub(channel)
+```
+
+## Writing to the Database
+
+Iterates over the generated transactions, converts them to byte format, and writes them to VectorDB using the Write method.
+
+```
+# Write transactions to the database
+for i, transaction in enumerate(transactions):
+    # ... Transaction writing details ...
+```
+
+## Reading from the Database
+
+Retrieves the transactions from the database using the Read method and collects them for analysis.
+
+```
+# Read and collect transaction vectors for analysis
+collected_transactions = []
+for i in range(len(transactions)):
+    # ... Transaction reading details ...
+```
+
+## Anomaly Detection
+
+Uses the `Isolation Forest` algorithm from `scikit-learn` to detect anomalies in the transactions based on the collected data.
+
+```
+# Anomaly detection using Isolation Forest
+clf = IsolationForest(contamination=0.1)  # Adjust contamination as needed
+clf.fit(collected_transactions)
+# ... Anomaly detection details ...
+```
+
+## Output
+
+Prints the status of each write operation and the results of the anomaly detection.

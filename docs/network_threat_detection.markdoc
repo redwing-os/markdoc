@@ -1,0 +1,85 @@
+# Network Threat Detection
+
+```
+python3 run/network_threat_detection.py
+```
+
+This is a Python Script for Network Log Data and Threat Analysis. It demonstrates how to generate, store, and analyze simulated network log data and network threats using gRPC with the VectorDB service.
+
+## Import Libraries
+
+The script begins by importing the necessary libraries for gRPC communication, data manipulation, and anomaly detection.
+
+```
+import grpc
+import vectordb_pb2
+import vectordb_pb2_grpc
+import struct
+import numpy as np
+from sklearn.ensemble import IsolationForest
+import random
+```
+
+## Function: `generate_log_data`
+
+This function simulates the creation of network log data, each entry containing request size, response time, and error codes.
+
+```
+def generate_log_data(num_entries):
+    """Generate simulated network log data."""
+    # ... Function implementation ...
+```
+
+## Setting Up gRPC Channel
+
+Sets up a gRPC channel to communicate with VectorDB and creates a `stub` (client).
+
+```channel = grpc.insecure_channel('localhost:50051')
+stub = vectordb_pb2_grpc.VectorDBStub(channel)
+```
+
+## Generating and Writing Log Data
+
+Generates log data entries and writes them to the VectorDB database.
+
+```
+log_data = generate_log_data(200)
+for i, entry in enumerate(log_data):
+    # ... Packing and writing data ...
+```
+
+## Reading and Collecting Log Data
+
+Reads back the log data from VectorDB for analysis.
+
+```
+collected_logs = []
+for i in range(len(log_data)):
+    # ... Reading data from VectorDB ...
+```
+
+## Anomaly Detection
+
+Uses the `Isolation Forest` algorithm to identify anomalies in the log data.
+
+```
+clf = IsolationForest(contamination=0.05)
+clf.fit(collected_logs)
+# ... Predicting anomalies ...
+```
+
+## Identifying Anomalous Entries
+
+Iterates over the collected logs to identify and report anomalous entries.
+
+```
+anomalies = clf.predict(collected_logs)
+for i, anomaly in enumerate(anomalies):
+    if anomaly == -1:
+        # ... Handling anomalous entry ...
+```Main Function
+The main function orchestrates the entire process from data generation to anomaly detection.
+
+```if __name__ == '__main__':
+    main()
+```

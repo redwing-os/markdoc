@@ -4,22 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/main.css">
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.1/dist/tailwind.min.css" rel="stylesheet">
+  <!-- <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3/dist/tailwind.min.css" rel="stylesheet"> -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css/github-markdown.css">
   <link href="https://cdn.jsdelivr.net/npm/flowbite/dist/flowbite.min.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
       /* styles.css */
   body, html {
     height: 100%;
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
   }
   
   .header {
     width: 100%;
-    background-color: white;
     padding: 1rem;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -31,8 +29,7 @@
   }
   
   .sidebar {
-    flex: 0 0 20%;
-    background: #f7f7f7;
+    /* flex: 0 0 20%; */
     padding: 1rem;
     line-height: 2rem;
     overflow: auto;
@@ -40,7 +37,7 @@
   }
   
   .main-content {
-    flex: 0 0 62%;
+    /* flex: 0 0 62%; */
     padding: 1rem;
     overflow: auto;
   }
@@ -49,156 +46,287 @@
     flex: 0 0 50%;
     background: black;
     color: #fff;
-    padding: 1rem;
+    padding: 3rem;
     overflow: auto;
-    border-radius: 8px;
-    margin: 15px !important;
-    padding: 30px !important;
   }
+
+  .markdown-body pre {
+    background: black;
+    color: white;
+  }
+
   </style>
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <title>VectorDB Documentation</title>
 </head>
-<body>
-  <div class="header">
-    <div class="logo">
-      <!-- <img src="/path-to-your-logo.png" alt="Logo" height="30"> -->
-      <span><b><a href="https://www.redwing.ai">Redwing</a></b></span>
-      <span><a href="https://www.redwing.ai"> | Docs</a></span>
+  <body class="text-black bg-white dark:bg-black dark:text-white">
+    <div class="header bg-gray-100 border-b dark:border-slate-700 dark:bg-slate-900 text-black dark:text-white">
+      <div class="logo">
+        <!-- <img src="/path-to-your-logo.png" alt="Logo" height="30"> -->
+        <span><b><a href="https://www.redwing.ai">Redwing.ai</a></b></span>
+        <span><a href="https://www.redwing.ai"> | Docs</a></span>
+      </div>
+      <nav>
+        <!-- Items on top right -->
+        <!-- <a href="https://redwing.ai">Home</a> -->
+        <!-- &nbsp;&nbsp;|&nbsp;&nbsp;  -->
+        <span class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-blue-400 border border-blue-400">
+          <a href="https://redwing-os.github.io/docs/rust_server/index.html">v1.0.5</a><br>
+        </span>
+      </nav>
     </div>
-    <nav>
-      <a href="https://redwing.ai">Home</a>
-      &nbsp;&nbsp;|&nbsp;&nbsp; 
-      <a target="_blank" href="https://redwing-os.github.io/docs/rust_server/index.html">Rust</a><br>
-    </nav>
-  </div>
-  <div class="container">
-    <div class="sidebar">
-      <!-- Navigation links here -->
-      <a href="#python">Python</a><br>
-      <a href="#csharp">C#</a><br>
-      <a href="#java">Java</a><br>
-      <a href="#cpp">C++</a><br>
-      <a href="#ruby">Ruby</a><br>
-      <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
-      <span>v1.0.5</span>      
-      <!-- Add more links as needed -->
-    </div>
+    <div class="container">
+      <div class="sidebar internal bg-gray-100 text-black dark:bg-black dark:text-white">
+        <h3 class="font-semibold text-black dark:bg-dark dark:text-white border-b dark:border-slate-800 pb-1">Client Libraries</h3>
+        <!-- Navigation links here -->
+        <a href="#python">Python</a><br>
+        <a href="#csharp">C#</a><br>
+        <a href="#java">Java</a><br>
+        <a href="#cpp">C++</a><br>
+        <a href="#ruby">Ruby</a><br>
+
+        <hr class="h-px my-4 bg-gray-200 border-0 bg-transparent">
+        <h3 class="font-semibold text-black dark:bg-dark dark:text-white border-b dark:border-slate-800 pb-1">Environments</h3>
+        <a href="#sandbox">Sandbox</a>
+        <br>
+        <a id="open-terminal-button" class="">
+          Terminal
+        </a>        
+
+        <hr class="h-px my-4 bg-gray-200 border-0 bg-transparent">
+        <h3 class="font-semibold text-black dark:bg-dark dark:text-white border-b dark:border-slate-800 pb-1">Scenarios</h3>
+        <a href="#transaction_fraud_anomaly">Transaction Fraud Anomaly</a><br>
+        <a href="#network_threat_detection">Network Threat Detection</a><br>            
+        <a href="#product_recommendation">Product Recommendation</a><br>            
+        <a href="#restock_low_inventory">Restock Low Inventory</a><br>            
+        <a href="#inventory_demand_forecast">Inventory Demand Forecast</a><br>
+           
+        <hr class="h-px my-4 bg-gray-200 border-0 bg-transparent">
+        <hr class="h-px my-4 bg-gray-200 border-0 bg-transparent">
+                 
+        <!-- <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-800">
+        <span>Vector v1.0.5</span>    
+        <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-800"> -->
+
+        <!-- Add more links as needed -->
+
+        <!-- Spacer to push the bottom content down -->
+        <div class="space-y-8 mb-4 flex-grow"></div>
     
-    <div class="main-content">
-        <div class="main-content bg-white p-6 overflow-y-auto">
-            <h2 class="text-2xl font-semibold text-gray-800 mb-4">VectorDB Integration</h2>
-            <p class="text-gray-600 mb-4">
-              This guide provides an overview of the VectorDB integration process. It's designed to help you understand the functionality of the client library and how to implement it within your application.
-            </p>
-          
-            <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
-
-            <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-2">Initialization</h3>
-            <p class="text-gray-600 mb-4">
-              To begin interaction with VectorDB, initialize the client stub. This stub will be your gateway to performing data operations such as create, read, update, and delete.
-            </p>
-          
-            <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
-
-            <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-2">Writing Data</h3>
-            <p class="text-gray-600 mb-4">
-              The write operation enables you to store vector data associated with a unique key. It's a simple yet powerful way to add new entries to your database.
-            </p>
-          
-            <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
-
-            <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-2">Reading Data</h3>
-            <p class="text-gray-600 mb-4">
-              Reading data is as straightforward as it sounds. By providing the unique key, you can retrieve the associated vector from the database.
-            </p>
-          
-            <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
-
-            <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-2">Updating Data</h3>
-            <p class="text-gray-600 mb-4">
-              Need to make changes? The update operation allows you to modify an existing vector, ensuring your data remains accurate and up-to-date.
-            </p>
-          
-            <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
-
-            <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-2">Deleting Data</h3>
-            <p class="text-gray-600 mb-4">
-              When a vector is no longer needed, the delete operation removes it from the database, freeing up space and keeping your dataset clean.
-            </p>
-          
-            <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
-
-            <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-2">Batch Operations</h3>
-            <p class="text-gray-600 mb-4">
-              For efficiency, batch operations allow you to perform multiple writes or updates in a single request. This is particularly useful when dealing with large data sets.
-            </p>
-          
-            <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
-
-            <p class="text-gray-600 mb-4">
-              Each section of the code corresponds to these operations and provides a practical example of how to execute them. Explore the code snippets on the right to see these operations in action.
-            </p>
-          </div>
-        <div class="main-content bg-white p-6 overflow-y-auto">
-            <!-- ... other content ... -->
-
-            <!-- Container for cards -->
-            <div class="flex justify-between space-x-4 mt-6">
-              <!-- First Card -->
-                <div class="flex-1 bg-blue-600 rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
-                    <div class="p-5">
-                    <h5 class="text-xl font-semibold tracking-tight text-white dark:text-white">Visit Docker Hub</h5>
-                    <p class="mb-3 font-normal text-white dark:text-gray-400">Get started with our deployable Docker container.</p>
-                    <a href="https://hub.docker.com/r/helloredwing/vector" class="bottomcard inline-flex items-center py-2 px-3 text-sm font-medium text-center text-blue-800 bg-white rounded-lg hover:bg-gray-200 focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                        Visit Docker Hub 
-                        <svg class="ml-2 -mr-1 h-4 w-4" fill="skyblue" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16z" clip-rule="evenodd"></path></svg>
-                    </a>
-                    </div>    
-                </div>
-                <!-- Second Card -->
-                <div class="flex-1 bg-black rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
-                    <div class="p-5">
-                    <h5 class="text-xl font-semibold tracking-tight text-white dark:text-white">Sandbox on Github</h5>
-                    <p class="mb-3 font-normal text-white dark:text-gray-400">View and download our Sandbox Environment.</p>
-                    <a href="https://www.github.com/redwing-os/sandbox" class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                        Get Started
-                        <svg class="ml-2 -mr-1 h-4 w-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16z" clip-rule="evenodd"></path></svg>
-                    </a>
-                    </div>
-                </div>
+        <!-- Bottom Content -->
+        <div class="space-y-8 mb-4">
+            <!-- Install Docker Card -->
+            <div class="bg-white rounded-md border border-gray-200 shadow-md dark:bg-gray-900 dark:border-gray-700 p-5">
+                <h5 class="text-xl font-semibold tracking-tight text-black dark:text-white">Install Docker</h5>
+                <hr class="h-px my-2 bg-gray-200 border-0 dark:bg-gray-800">
+                <p class="mb-3 font-normal text-black dark:text-gray-400">To get started with our container, first install Docker.</p>
+                <a href="https://docs.docker.com/get-docker/" class="w-full inline-flex items-center justify-center py-2 px-3 text-sm font-medium text-center text-white bg-indigo-700 rounded-lg hover:bg-indigo-600 focus:ring-4 focus:ring-indigo-300 dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indigo-800 dark:text-white">
+                  Visit Docker 
+                </a>              
             </div>
-        </div>                     
+    
+            <!-- Client  Card -->
+            <div class="bg-white rounded-md border border-gray-200 shadow-md dark:bg-gray-900 dark:border-gray-700 p-5">
+                <h5 class="text-xl font-semibold tracking-tight text-black dark:text-white">Vector Clients</h5>
+                <hr class="h-px my-2 bg-gray-200 border-0 dark:bg-gray-800">
+                <p class="mb-3 font-normal text-black dark:text-gray-400">Browse all our implementation libraries from Java to Ruby.</p>
+                <a href="https://docs.docker.com/get-docker/" class="w-full inline-flex items-center justify-center py-2 px-3 text-sm font-medium text-center text-white bg-indigo-700 rounded-lg hover:bg-indigo-600 focus:ring-4 focus:ring-indigo-300 dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indigo-800 dark:text-white">
+                  Visit Client Libraries
+                </a>
+            </div>
+        </div>                         
+      </div>
+      
+      <div class="main-content border-l dark:border-gray-800 dark:mr-8 text-black bg-white dark:bg-black dark:text-white">
+          <div class="markdown-body text-black bg-white dark:bg-transparent dark:text-white p-8 overflow-y-auto">
+              <h2 class="text-4xl font-semibold text-black dark:bg-dark dark:text-white">Developer Documentation</h2>
+              <p class=" mb-12 border-b pb-4 dark:border-slate-800">
+                This guide provides an overview of our Vector container and code integration process with <a class="font-medium text-blue-400 underline dark:text-blue-500 hover:no-underline" href="https://www.github.com/redwing-os/sandbox">Sandbox</a>. 
+                It's designed to help you understand the functionality of the client library and how to implement it within your application. To provision a license key and customer id please visit <a href=" https://redwing.ai/plans"> https://redwing.ai/plans</a>
+              </p>
+
+              <h3 class="text-4xl font-semibold text-black dark:bg-dark dark:text-white">Install Sandbox</h3>
+              <!-- Mockup of interactive code terminal -->
+              <p class="border-b dark:border-slate-800 pb-4">This clones and establishes the Sandbox directory from which you will pull and compose the Docker container</p>
+              <div class="code-sandbox bg-gray-100 dark:bg-slate-900 text-white mt-2 p-4 pt-7 pl-6 rounded-lg font-mono text-sm relative">
+                <p id="code-snippet" class="text-black dark:text-green-400">git clone https://github.com/redwing-os/sandbox.git <br> cd sandbox</p>
+                <button id="copy-button1" onclick="copyToClipboard('#code-snippet', 'copy-button1')" class="absolute top-7 right-6 text-xs bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-1 px-2 rounded">
+                  Copy
+                </button>
+              </div>    
+              <br>      
+
+              <h3 class="text-4xl font-semibold text-black dark:bg-dark dark:text-white">Set Environment Variables</h3>
+              <!-- Mockup of interactive code terminal -->
+              <p class="border-b dark:border-slate-800 pb-4">Sets your container license key to run the Vector Docker container and enables allotted core utilization within VM</p>
+              <div class="code-sandbox bg-gray-100 dark:bg-slate-900 text-white mt-2 p-4 pt-7 pl-6 rounded-lg font-mono text-sm relative">
+                <p id="code-snippet6" class="text-black dark:text-green-400">
+                  export LICENSE_KEY=[your-license-key]
+                  <br>
+                  export CUSTOMER_ID=[your-customer-id]
+                </p>
+                <button id="copy-button6" onclick="copyToClipboard('#code-snippet6', 'copy-button6')" class="absolute top-7 right-6 text-xs bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-1 px-2 rounded">
+                  Copy
+                </button>
+              </div>    
+              <br>             
+
+              <h3 class="text-4xl font-semibold text-black dark:bg-dark dark:text-white">Docker Pull</h3>
+              <!-- Mockup of interactive code terminal -->
+              <p class="border-b dark:border-slate-800 pb-4">Pulls and runs the Docker container from Docker Hub using Sandbox's built-in &nbsp;
+                <span class="bg-grey-100 text-grey-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-grey-400 border border-grey-400">
+                docker-compose.yml                
+                </span>
+              </p>
+              <!-- Mockup of interactive code terminal -->
+              <div class="code-sandbox bg-gray-100 dark:bg-slate-900 text-white mt-2 p-4 pt-7 pl-6 rounded-lg font-mono text-sm relative">
+                <p id="code-snippet2" class="text-black dark:text-green-400">docker pull helloredwing/vector && docker-compose up</p>
+                <button id="copy-button2" onclick="copyToClipboard('#code-snippet2', 'copy-button2')" class="absolute top-7 right-6 text-xs bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-1 px-2 rounded">
+                  Copy
+                </button>
+              </div>    
+              <br>    
+
+              <h3 class="text-4xl font-semibold text-black dark:bg-dark dark:text-white">Cassandra Connect</h3>
+              <!-- Mockup of interactive code terminal -->
+              <p class="border-b dark:border-slate-800 pb-4">Establishes Cassandra connection in container to run initialization commands
+              <div class="code-sandbox bg-gray-100 dark:bg-slate-900 text-white mt-2 p-4 pt-7 pl-6 rounded-lg font-mono text-sm relative">
+                <p id="code-snippet4" class="text-black dark:text-green-400">docker exec -it redwing_vector-cassandra-1 cqlsh</p>
+                <button id="copy-button4" onclick="copyToClipboard('#code-snippet4', 'copy-button4')" class="absolute top-7 right-6 text-xs bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-1 px-2 rounded">
+                  Copy
+                </button>
+              </div>    
+              <br>    
+              
+              <h3 class="text-4xl font-semibold text-black dark:bg-dark dark:text-white">Database Configuration</h3>
+              <!-- Mockup of interactive code terminal -->
+              <p class="border-b dark:border-slate-800 pb-4">Establishes Cassandra tables and keyspaces for the Vector gRPC service
+              <div class="code-sandbox bg-gray-100 dark:bg-slate-900 text-white mt-2 p-4 pt-7 pl-6 rounded-lg font-mono text-sm relative">
+                <p id="code-snippet5" class="text-black dark:text-green-400">CREATE KEYSPACE redwing_keyspace WITH replication = {'class': 'SimpleStrategy', 'replication_factor': 1};
+
+                  CREATE TABLE redwing_keyspace.vectors (
+                      key text PRIMARY KEY,
+                      vector list<float>,
+                      created_at timestamp,
+                      updated_at timestamp
+                  );</p>
+                <button id="copy-button5" onclick="copyToClipboard('#code-snippet5', 'copy-button5')" class="absolute top-7 right-6 text-xs bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-1 px-2 rounded">
+                  Copy
+                </button>
+              </div>    
+              <br>               
+              
+              <h3 class="text-4xl font-semibold text-black dark:bg-dark dark:text-white">Run Python Script</h3>
+              <!-- Mockup of interactive code terminal -->
+              <p class="border-b dark:border-slate-800 pb-4">Runs a simple Python script to test the system is setup properly
+              <div class="code-sandbox bg-gray-100 dark:bg-slate-900 text-white mt-2 p-4 pt-7 pl-6 rounded-lg font-mono text-sm relative">
+                <p id="code-snippet6" class="text-black dark:text-green-400">python3 run/test1.py</p>
+                <button id="copy-button6" onclick="copyToClipboard('#code-snippet6', 'copy-button6')" class="absolute top-7 right-6 text-xs bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-1 px-2 rounded">
+                  Copy
+                </button>
+              </div>    
+              <br>     
+
+              <div class="internal">
+                <a href="#sandbox" class="inline-flex items-center justify-center p-5 text-base font-medium text-gray-500 rounded-lg bg-gray-50 hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700 dark:hover:text-white">
+                    <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 .333A9.911 9.911 0 0 0 6.866 19.65c.5.092.678-.215.678-.477 0-.237-.01-1.017-.014-1.845-2.757.6-3.338-1.169-3.338-1.169a2.627 2.627 0 0 0-1.1-1.451c-.9-.615.07-.6.07-.6a2.084 2.084 0 0 1 1.518 1.021 2.11 2.11 0 0 0 2.884.823c.044-.503.268-.973.63-1.325-2.2-.25-4.516-1.1-4.516-4.9A3.832 3.832 0 0 1 4.7 7.068a3.56 3.56 0 0 1 .095-2.623s.832-.266 2.726 1.016a9.409 9.409 0 0 1 4.962 0c1.89-1.282 2.717-1.016 2.717-1.016.366.83.402 1.768.1 2.623a3.827 3.827 0 0 1 1.02 2.659c0 3.807-2.319 4.644-4.525 4.889a2.366 2.366 0 0 1 .673 1.834c0 1.326-.012 2.394-.012 2.72 0 .263.18.572.681.475A9.911 9.911 0 0 0 10 .333Z" clip-rule="evenodd"/>
+                    </svg>
+                    <span class="w-full pl-2">Sandbox Environment In-Depth Documentation</span>
+                    <svg class="w-4 h-4 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                    </svg>
+                </a>             
+              </div>
+              <div id="terminal-modal" class="hidden fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full">
+                <div class="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white">
+                  <div class="mt-3 text-center">
+                    <h3 class="text-lg leading-6 font-medium text-gray-900">Terminal Instructions</h3>
+                    <div class="mt-2 px-7 py-3">
+                      <p class="text-sm text-gray-500">
+                        Be sure to have <a href="https://docs.docker.com/get-docker/">Docker</a> running 🐳<br><br>
+                        <span class=border-b">To open the terminal, follow these steps</span><br><br>
+                        <span>
+                          1. On Windows, press Win + R, type "cmd", and press Enter.<br>
+                          2. On macOS, press Command + Space, type "Terminal", and press Enter.<br>
+                          3. On Linux, use your desktop environment’s application launcher and search for "Terminal".<br><br>
+                          Once the terminal is open, run the following:<br>
+                        </span>
+                      </p>
+                    </div>
+                    <div class="bg-gray-100 text-gray-800 p-2 rounded-md font-mono">
+                      <span id="modal-code-snippet">docker pull helloredwing/vector && docker-compose up</span>
+                      <button id="copy-button3" onclick="copyToClipboard('#modal-code-snippet', 'copy-button3')" class="text-xs bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-1 px-2 rounded">
+                        Copy
+                      </button>                   
+                    </div>
+                    <br>
+                    <button id="close-modal-button" class="px-4 py-2 bg-indigo-500 text-white text-base font-medium rounded-md w-full shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-300">
+                      Close
+                    </button>                       
+                  </div>
+                </div>
+              </div>              
+            </div>             
+      </div>
+      <div class="border-l dark:border-gray-800 code-content markdown-body text-black bg-white dark:bg-gray-900 dark:text-white">
+          {{{htmlContent}}}
+      </div>
     </div>
-    <div class="code-content markdown-body">
-        {{{htmlContent}}}
-    </div>
-  </div>
-  <script>
-    document.querySelectorAll('.sidebar a').forEach(link => {
-      link.addEventListener('click', function(event) {
-        event.preventDefault();
-  
-        const language = this.getAttribute('href').substring(1);
-        const markdownPath = `/docs/${language}.markdoc`;
-  
-        fetch(markdownPath)
-          .then(response => {
-            if (!response.ok) {
-              throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            return response.text();
-          })
-          .then(markdown => {
-            const htmlContent = marked.parse(markdown); // Use `parse` method
-            document.querySelector('.code-content').innerHTML = htmlContent;
-          })
-          .catch(error => {
-            console.error('Error fetching the markdown content:', error);
-          });
+    <script>
+      document.querySelectorAll('.internal a').forEach(link => {
+        link.addEventListener('click', function(event) {
+          event.preventDefault();
+    
+          const language = this.getAttribute('href').substring(1);
+          const markdownPath = `/docs/${language}.markdoc`;
+    
+          fetch(markdownPath)
+            .then(response => {
+              if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+              }
+              return response.text();
+            })
+            .then(markdown => {
+              const htmlContent = marked.parse(markdown); // Use `parse` method
+              document.querySelector('.code-content').innerHTML = htmlContent;
+            })
+            .catch(error => {
+              console.error('Error fetching the markdown content:', error);
+            });
+        });
       });
-    });
-  </script>
-  
-</body>
+    </script>
+    <script>
+      const openModalButton = document.getElementById('open-terminal-button');
+      const closeModalButton = document.getElementById('close-modal-button');
+      const modal = document.getElementById('terminal-modal');
+
+      openModalButton.addEventListener('click', () => {
+        modal.classList.remove('hidden');
+      });
+
+      closeModalButton.addEventListener('click', () => {
+        modal.classList.add('hidden');
+      });
+    </script>
+    <script>
+        function copyToClipboard(element, buttonId) {
+          const text = document.querySelector(element).innerText;
+          navigator.clipboard.writeText(text).then(() => {
+            // Find the button that was clicked using its ID
+            const copyButton = document.getElementById(buttonId);
+            copyButton.innerHTML = 'Copied!';
+
+            // Reset the button text back to "Copy" after a few seconds
+            setTimeout(() => {
+              copyButton.innerHTML = 'Copy';
+            }, 3000); // Reset after 3 seconds
+          }).catch(err => {
+            console.error('Failed to copy text: ', err);
+          });
+        }
+    </script>
+  </body>
 </html>
