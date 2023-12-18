@@ -12,3 +12,11 @@ To run:
 npm i
 npm start
 ```
+
+To deploy:
+
+```
+nvm use 18.18.2
+vercel
+vercel --prod
+```
