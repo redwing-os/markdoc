@@ -1,4 +1,4 @@
-# Network Threat Detection
+## Network Threat Detection
 
 ```
 python3 run/network_threat_detection.py
