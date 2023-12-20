@@ -1,4 +1,4 @@
-nvm use 18.18.2
+# nvm use 18.18.2
 
 git add .
 git commit -m "."
