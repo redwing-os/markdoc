@@ -1,0 +1,42 @@
+<div class="">
+    <div class="markdown-body text-black bg-white dark:bg-transparent dark:text-white p-8 overflow-y-auto">
+        <!-- This h2 tag replaces the previous Developer Documentation heading -->
+        <h2 class="text-4xl font-semibold text-black dark:bg-dark dark:text-white">Vector Terraform</h2>
+
+        <!-- This paragraph replaces the overview of the Vector container -->
+        <p class="mb-12 border-b pb-4 dark:border-slate-800">
+            Vector Terraform is an auto-provisioning system to fully deploy Redwing Vector to a cloud provider of your choice. To run the app with prompt-based auto-configuration, simply clone this repo and enter the `terraform` directory where the app is installed and run the following command:
+        </p>
+
+        <!-- Code blocks replaced with mockup interactive code terminals -->
+        <div class="bg-gray-100 dark:bg-slate-900 text-white mt-2 p-4 pt-7 pl-6 rounded-lg font-mono text-sm relative">
+            <p id="code-snippet14" class="text-black dark:text-green-400">
+                sh run_terraform.sh
+            </p>
+            <button id="copy-button14" onclick="copyToClipboard('#code-snippet14', 'copy-button14')" class="absolute top-7 right-6 text-xs bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-1 px-2 rounded">
+                Copy
+            </button>
+        </div>
+        <br>
+
+        <!-- Repeat the structure above for each code block or section needed -->
+        <!-- ... more content ... -->
+
+        <h3 class="text-4xl font-semibold text-black dark:bg-dark dark:text-white">AWS Credential Configuration</h3>
+        <p class="mb-4">Be sure to run the app from the same terminal window, or ensure the variables are saved to your .bash_profile or .bashrc</p>
+        <p class="mb-4">Documentation for getting AWS Access Keys is available here, IAM roles must be configured for correct usage and access to Cloudwatch.</p>
+        <a class="font-medium text-blue-400 underline dark:text-blue-500 hover:no-underline" href="https://docs.aws.amazon.com/powershell/latest/userguide/pstools-appendix-sign-up.html">AWS IAM Documentation</a>
+        
+        <!-- ... more content ... -->
+        
+        <h3 class="text-4xl font-semibold text-black dark:bg-dark dark:text-white">Important Notes:</h3>
+        <ul class="list-disc pl-5 mb-4">
+            <li>Never commit your ~/.aws/credentials file to source control.</li>
+            <li>Regularly rotate your AWS access keys and always follow best security practices.</li>
+            <li>Ensure you have the necessary permissions in AWS to perform the actions required by the application.</li>
+        </ul>
+
+        <!-- ... more content ... -->
+
+    </div>             
+</div>

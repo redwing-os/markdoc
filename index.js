@@ -29,7 +29,17 @@ app.get('/', (req, res) => {
       return;
     }
 
-    const rendered = mustache.render(templateHtml, { htmlContent });
+    // Read tab content
+    const tab1 = fs.readFileSync(path.join(__dirname, 'public/tab1.html'), 'utf8');
+    const tab2 = fs.readFileSync(path.join(__dirname, 'public/tab2.html'), 'utf8');
+
+    // Render with Mustache
+    const rendered = mustache.render(templateHtml, { htmlContent }, {
+      'tab-component': fs.readFileSync(path.join(__dirname, 'public/tab-component.html'), 'utf8'),
+      'tab1': tab1,
+      'tab2': tab2
+    });
+
     res.send(rendered);
   });
 });

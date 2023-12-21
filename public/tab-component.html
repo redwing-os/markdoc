@@ -1,0 +1,62 @@
+<div class="tabs mb-4 border-b border-gray-200 dark:border-gray-700">
+    <ul class="flex flex-wrap -mb-px text-sm font-medium text-center" role="tablist">
+        <li class="mr-2" role="presentation">
+            <button data-tab="1" role="tab" class="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300 focus:outline-none focus:border-indigo-700" onclick="openTab('tab1')" type="button">Sandbox</button>
+        </li>
+        <li class="mr-2" role="presentation">
+            <button data-tab="2" role="tab" class="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300 focus:outline-none focus:border-indigo-700" onclick="openTab('tab2')" type="button">Terraform</button>
+        </li>
+    </ul>
+</div>
+<div id="tab-content">
+    <div class="hidden p-4 bg-gray-50 dark:bg-gray-800 rounded-lg" id="tab1" role="tabpanel">
+        <!-- Content for Tab 1 -->
+        {{> tab1 }}
+    </div>
+    <div class="hidden p-4 bg-gray-50 dark:bg-gray-800 rounded-lg" id="tab2" role="tabpanel">
+        <!-- Content for Tab 2 -->
+        {{> tab2 }}
+    </div>
+</div>
+
+<script>
+function openTab(tabId) {
+    // Hide all tab content
+    var tabcontent = document.querySelectorAll("#tab-content > div");
+    tabcontent.forEach(function(content) {
+        content.classList.add('hidden');
+    });
+
+    // Remove active class from all tabs
+    var tablinks = document.querySelectorAll(".tabs button");
+    tablinks.forEach(function(tab) {
+        tab.classList.remove('border-indigo-700', 'text-indigo-500');
+        tab.classList.add('border-transparent');
+    });
+
+    // Show the selected tab content
+    var tabToShow = document.getElementById('tab' + tabId);
+    if (tabToShow) {
+        tabToShow.classList.remove('hidden');
+    }
+
+    // Highlight the active tab
+    var activeTab = document.querySelector(`.tabs button[data-tab="${tabId}"]`);
+    if (activeTab) {
+        activeTab.classList.remove('border-transparent');
+        activeTab.classList.add('border-indigo-700', 'text-indigo-500');
+    }
+}
+
+// Attach event listeners to buttons
+document.querySelectorAll(".tabs button").forEach(button => {
+    button.addEventListener('click', function() {
+        openTab(this.getAttribute('data-tab'));
+    });
+});
+
+// Initialize the first tab as active
+window.addEventListener('DOMContentLoaded', (event) => {
+    openTab('1');
+});
+</script>

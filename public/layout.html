@@ -97,7 +97,7 @@
     </div>
     <div class="container">
       <div class="sidebar internal bg-gray-100 text-black dark:bg-black dark:text-white">
-        <h3 class="font-semibold text-black dark:bg-dark dark:text-white border-b dark:border-slate-800 pb-1">Client Libraries</h3>
+        <h3 class="font-semibold text-black dark:bg-dark dark:text-white border-b dark:border-slate-800 pb-1 py-1">Client Libraries</h3>
         <!-- Navigation links here -->
         <a href="#python">Python</a><br>
         <a href="#csharp">C#</a><br>
@@ -106,12 +106,16 @@
         <a href="#ruby">Ruby</a><br>
 
         <hr class="h-px my-4 bg-gray-200 border-0 bg-transparent">
-        <h3 class="font-semibold text-black dark:bg-dark dark:text-white border-b dark:border-slate-800 pb-1">Environments</h3>
-        <a href="#sandbox">Sandbox</a>
-        <br>
+        <h3 class="font-semibold text-black dark:bg-dark dark:text-white border-b dark:border-slate-800 pb-1">Applications</h3>
         <a id="open-terminal-button" class="">
           Terminal
-        </a>        
+        </a>      
+        <!-- <br>        
+        <a href="#sandbox">Sandbox</a>
+        <br>  
+        <a id="open-terminal-button" class="">
+          Terraform
+        </a>                -->
 
         <hr class="h-px my-4 bg-gray-200 border-0 bg-transparent">
         <h3 class="font-semibold text-black dark:bg-dark dark:text-white border-b dark:border-slate-800 pb-1">Scenarios</h3>
@@ -120,6 +124,7 @@
         <a href="#product_recommendation">Product Recommendation</a><br>            
         <a href="#restock_low_inventory">Restock Low Inventory</a><br>            
         <a href="#inventory_demand_forecast">Inventory Demand Forecast</a><br>
+        <a href="#healthcare_semantic_search">Healthcare Semantic Search</a><br>
            
         <hr class="h-px my-4 bg-gray-200 border-0 bg-transparent">
         <hr class="h-px my-4 bg-gray-200 border-0 bg-transparent">
@@ -150,145 +155,16 @@
                 <h5 class="text-xl font-semibold tracking-tight text-black dark:text-white">Vector Clients</h5>
                 <hr class="h-px my-2 bg-gray-200 border-0 dark:bg-gray-800">
                 <p class="mb-3 font-normal text-black dark:text-gray-400">Browse all our implementation libraries from Java to Ruby.</p>
-                <a href="https://www.github.com/redwing-os/client" class="w-full inline-flex items-center justify-center py-2 px-3 text-sm font-medium text-center text-white bg-indigo-700 rounded-lg hover:bg-indigo-600 focus:ring-4 focus:ring-indigo-300 dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indigo-800 dark:text-white">
+                <a href="https://www.github.com/redwing-os/client" class="w-full inline-flex items-center justify-center py-3 px-3 text-sm font-medium text-center text-white bg-indigo-700 rounded-lg hover:bg-indigo-600 focus:ring-4 focus:ring-indigo-300 dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indigo-800 dark:text-white">
                   Visit Client Libraries
                 </a>
             </div>
         </div>                         
       </div>
       
-      <div class="main-content border-l dark:border-gray-800 dark:mr-8 text-black bg-white dark:bg-black dark:text-white">
-          <div class="markdown-body text-black bg-white dark:bg-transparent dark:text-white p-8 overflow-y-auto">
-              <h2 class="text-4xl font-semibold text-black dark:bg-dark dark:text-white">Developer Documentation</h2>
-              <p class=" mb-12 border-b pb-4 dark:border-slate-800">
-                This guide provides an overview of our Vector container and code integration process with <a class="font-medium text-blue-400 underline dark:text-blue-500 hover:no-underline" href="https://www.github.com/redwing-os/sandbox">Sandbox</a>. 
-                It's designed to help you understand the functionality of the client library and how to implement it within your application. To provision a license key and customer id please visit <a href=" https://redwing.ai/plans"> https://redwing.ai/plans</a>
-              </p>
-
-              <h3 class="text-4xl font-semibold text-black dark:bg-dark dark:text-white">Install Sandbox</h3>
-              <!-- Mockup of interactive code terminal -->
-              <p class="border-b dark:border-slate-800 pb-4">This clones and establishes the Sandbox directory from which you will pull and compose the Docker container</p>
-              <div class="code-sandbox bg-gray-100 dark:bg-slate-900 text-white mt-2 p-4 pt-7 pl-6 rounded-lg font-mono text-sm relative">
-                <p id="code-snippet" class="text-black dark:text-green-400">git clone https://github.com/redwing-os/sandbox.git <br> cd sandbox</p>
-                <button id="copy-button1" onclick="copyToClipboard('#code-snippet', 'copy-button1')" class="absolute top-7 right-6 text-xs bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-1 px-2 rounded">
-                  Copy
-                </button>
-              </div>    
-              <br>      
-
-              <h3 class="text-4xl font-semibold text-black dark:bg-dark dark:text-white">Set Environment Variables</h3>
-              <!-- Mockup of interactive code terminal -->
-              <p class="border-b dark:border-slate-800 pb-4">Sets your container license key to run the Vector Docker container and enables allotted core utilization within VM</p>
-              <div class="code-sandbox bg-gray-100 dark:bg-slate-900 text-white mt-2 p-4 pt-7 pl-6 rounded-lg font-mono text-sm relative">
-                <p id="code-snippet6" class="text-black dark:text-green-400">
-                  export LICENSE_KEY=[your-license-key]
-                  <br>
-                  export CUSTOMER_ID=[your-customer-id]
-                </p>
-                <button id="copy-button6" onclick="copyToClipboard('#code-snippet6', 'copy-button6')" class="absolute top-7 right-6 text-xs bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-1 px-2 rounded">
-                  Copy
-                </button>
-              </div>    
-              <br>             
-
-              <h3 class="text-4xl font-semibold text-black dark:bg-dark dark:text-white">Docker Pull</h3>
-              <!-- Mockup of interactive code terminal -->
-              <p class="border-b dark:border-slate-800 pb-4">Pulls and runs the Docker container from Docker Hub using Sandbox's built-in &nbsp;
-                <span class="bg-grey-100 text-grey-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-grey-400 border border-grey-400">
-                docker-compose.yml                
-                </span>
-              </p>
-              <!-- Mockup of interactive code terminal -->
-              <div class="code-sandbox bg-gray-100 dark:bg-slate-900 text-white mt-2 p-4 pt-7 pl-6 rounded-lg font-mono text-sm relative">
-                <p id="code-snippet2" class="text-black dark:text-green-400">docker pull helloredwing/vector && docker-compose up</p>
-                <button id="copy-button2" onclick="copyToClipboard('#code-snippet2', 'copy-button2')" class="absolute top-7 right-6 text-xs bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-1 px-2 rounded">
-                  Copy
-                </button>
-              </div>    
-              <br>    
-
-              <h3 class="text-4xl font-semibold text-black dark:bg-dark dark:text-white">Cassandra Connect</h3>
-              <!-- Mockup of interactive code terminal -->
-              <p class="border-b dark:border-slate-800 pb-4">Establishes Cassandra connection in container to run initialization commands
-              <div class="code-sandbox bg-gray-100 dark:bg-slate-900 text-white mt-2 p-4 pt-7 pl-6 rounded-lg font-mono text-sm relative">
-                <p id="code-snippet4" class="text-black dark:text-green-400">docker exec -it redwing_vector-cassandra-1 cqlsh</p>
-                <button id="copy-button4" onclick="copyToClipboard('#code-snippet4', 'copy-button4')" class="absolute top-7 right-6 text-xs bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-1 px-2 rounded">
-                  Copy
-                </button>
-              </div>    
-              <br>    
-              
-              <h3 class="text-4xl font-semibold text-black dark:bg-dark dark:text-white">Database Configuration</h3>
-              <!-- Mockup of interactive code terminal -->
-              <p class="border-b dark:border-slate-800 pb-4">Establishes Cassandra tables and keyspaces for the Vector gRPC service
-              <div class="code-sandbox bg-gray-100 dark:bg-slate-900 text-white mt-2 p-4 pt-7 pl-6 rounded-lg font-mono text-sm relative">
-                <p id="code-snippet5" class="text-black dark:text-green-400">CREATE KEYSPACE redwing_keyspace WITH replication = {'class': 'SimpleStrategy', 'replication_factor': 1};
-
-                  CREATE TABLE redwing_keyspace.vectors (
-                      key text PRIMARY KEY,
-                      vector list<float>,
-                      created_at timestamp,
-                      updated_at timestamp
-                  );</p>
-                <button id="copy-button5" onclick="copyToClipboard('#code-snippet5', 'copy-button5')" class="absolute top-7 right-6 text-xs bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-1 px-2 rounded">
-                  Copy
-                </button>
-              </div>    
-              <br>               
-              
-              <h3 class="text-4xl font-semibold text-black dark:bg-dark dark:text-white">Run Python Script</h3>
-              <!-- Mockup of interactive code terminal -->
-              <p class="border-b dark:border-slate-800 pb-4">Runs a simple Python script to test the system is setup properly
-              <div class="code-sandbox bg-gray-100 dark:bg-slate-900 text-white mt-2 p-4 pt-7 pl-6 rounded-lg font-mono text-sm relative">
-                <p id="code-snippet9" class="text-black dark:text-green-400">python3 run/test1.py</p>
-                <button id="copy-button9" onclick="copyToClipboard('#code-snippet9', 'copy-button9')" class="absolute top-7 right-6 text-xs bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-1 px-2 rounded">
-                  Copy
-                </button>
-              </div>    
-              <br>     
-
-              <div class="internal">
-                <a href="#sandbox" class="inline-flex items-center justify-center p-5 text-base font-medium text-gray-500 rounded-lg bg-gray-50 hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700 dark:hover:text-white">
-                    <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                      <path fill-rule="evenodd" d="M10 .333A9.911 9.911 0 0 0 6.866 19.65c.5.092.678-.215.678-.477 0-.237-.01-1.017-.014-1.845-2.757.6-3.338-1.169-3.338-1.169a2.627 2.627 0 0 0-1.1-1.451c-.9-.615.07-.6.07-.6a2.084 2.084 0 0 1 1.518 1.021 2.11 2.11 0 0 0 2.884.823c.044-.503.268-.973.63-1.325-2.2-.25-4.516-1.1-4.516-4.9A3.832 3.832 0 0 1 4.7 7.068a3.56 3.56 0 0 1 .095-2.623s.832-.266 2.726 1.016a9.409 9.409 0 0 1 4.962 0c1.89-1.282 2.717-1.016 2.717-1.016.366.83.402 1.768.1 2.623a3.827 3.827 0 0 1 1.02 2.659c0 3.807-2.319 4.644-4.525 4.889a2.366 2.366 0 0 1 .673 1.834c0 1.326-.012 2.394-.012 2.72 0 .263.18.572.681.475A9.911 9.911 0 0 0 10 .333Z" clip-rule="evenodd"/>
-                    </svg>
-                    <span class="w-full pl-2">Sandbox Environment In-Depth Documentation</span>
-                    <svg class="w-4 h-4 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-                    </svg>
-                </a>             
-              </div>
-              <div id="terminal-modal" class="hidden fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full">
-                <div class="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white">
-                  <div class="mt-3 text-center">
-                    <h3 class="text-lg leading-6 font-medium text-gray-900">Terminal Instructions</h3>
-                    <div class="mt-2 px-7 py-3">
-                      <p class="text-sm text-gray-500">
-                        Be sure to have <a href="https://docs.docker.com/get-docker/">Docker</a> running 🐳<br><br>
-                        <span class=border-b">To open the terminal, follow these steps</span><br><br>
-                        <span>
-                          1. On Windows, press Win + R, type "cmd", and press Enter.<br>
-                          2. On macOS, press Command + Space, type "Terminal", and press Enter.<br>
-                          3. On Linux, use your desktop environment’s application launcher and search for "Terminal".<br><br>
-                          Once the terminal is open, run the following:<br>
-                        </span>
-                      </p>
-                    </div>
-                    <div class="bg-gray-100 text-gray-800 p-2 rounded-md font-mono">
-                      <span id="modal-code-snippet">docker pull helloredwing/vector && docker-compose up</span>
-                      <button id="copy-button3" onclick="copyToClipboard('#modal-code-snippet', 'copy-button3')" class="text-xs bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-1 px-2 rounded">
-                        Copy
-                      </button>                   
-                    </div>
-                    <br>
-                    <button id="close-modal-button" class="px-4 py-2 bg-indigo-500 text-white text-base font-medium rounded-md w-full shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-300">
-                      Close
-                    </button>                       
-                  </div>
-                </div>
-              </div>              
-            </div>             
-      </div>
+      <div class="main-content dark:border-gray-800 dark:mr-8 text-black bg-white dark:bg-black dark:text-white">
+          {{> tab-component }}
+        </div>
       <div class="border-l dark:border-gray-800 code-content markdown-body text-black bg-white dark:bg-gray-900 dark:text-white">
           {{{htmlContent}}}
       </div>
