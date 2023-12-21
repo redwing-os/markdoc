@@ -6,6 +6,26 @@
         It's designed to help you understand the functionality of the client library and how to implement it within your application. To provision a license key and customer id please visit <a href=" https://redwing.ai/plans"> https://redwing.ai/plans</a>
         </p>
 
+        <div class="flex pt-6 pl-6 p-4 text-sm text-blue-800 rounded-lg bg-blue-50 dark:bg-gray-900 dark:text-blue-400" role="alert">
+            <svg class="flex-shrink-0 inline w-4 h-4 me-3 mt-[2px]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
+            </svg>
+            <span class="sr-only">Info</span>
+            <div>
+                <span class="font-medium">Ensure that these requirements are met:</span>
+                <ul class="mt-1.5 list-disc list-inside">
+                    <li>You are running on an 
+                        <span class="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">arm64</span>
+                        compatible machine architecture.
+                    </li>
+                    <li>All M1, M2, and M3 class Apple devices are compatible with 
+                        <span class="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">arm64</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+  
         <h3 class="text-4xl font-semibold text-black dark:bg-dark dark:text-white">Install Sandbox</h3>
         <!-- Mockup of interactive code terminal -->
         <p class="border-b dark:border-slate-800 pb-4">This clones and establishes the Sandbox directory from which you will pull and compose the Docker container</p>
@@ -34,14 +54,15 @@
 
         <h3 class="text-4xl font-semibold text-black dark:bg-dark dark:text-white">Docker Pull</h3>
         <!-- Mockup of interactive code terminal -->
-        <p class="border-b dark:border-slate-800 pb-4">Pulls and runs the Docker container from Docker Hub using Sandbox's built-in &nbsp;
+        <p class="border-b dark:border-slate-800 pb-4">Be sure to have both Docker and <a href="https://docs.docker.com/compose/install/">docker-compose</a> installed. This step pulls and runs the Docker container from Docker Hub using Sandbox's built-in &nbsp;
         <span class="bg-grey-100 text-grey-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-grey-400 border border-grey-400">
         docker-compose.yml                
         </span>
         </p>
         <!-- Mockup of interactive code terminal -->
         <div class="code-sandbox bg-gray-100 dark:bg-slate-900 text-white mt-2 p-4 pt-7 pl-6 rounded-lg font-mono text-sm relative">
-        <p id="code-snippet2" class="text-black dark:text-green-400">docker pull helloredwing/vector && docker-compose up</p>
+        <p id="code-snippet2" class="text-black dark:text-green-400">
+            docker pull helloredwing/vector && docker-compose up</p>
         <button id="copy-button2" onclick="copyToClipboard('#code-snippet2', 'copy-button2')" class="absolute top-7 right-6 text-xs bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-1 px-2 rounded">
             Copy
         </button>
@@ -98,35 +119,6 @@
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
             </svg>
         </a>             
-        </div>
-        <div id="terminal-modal" class="hidden fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full">
-        <div class="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white">
-            <div class="mt-3 text-center">
-            <h3 class="text-lg leading-6 font-medium text-gray-900">Terminal Instructions</h3>
-            <div class="mt-2 px-7 py-3">
-                <p class="text-sm text-gray-500">
-                Be sure to have <a href="https://docs.docker.com/get-docker/">Docker</a> running 🐳<br><br>
-                <span class=border-b">To open the terminal, follow these steps</span><br><br>
-                <span>
-                    1. On Windows, press Win + R, type "cmd", and press Enter.<br>
-                    2. On macOS, press Command + Space, type "Terminal", and press Enter.<br>
-                    3. On Linux, use your desktop environment’s application launcher and search for "Terminal".<br><br>
-                    Once the terminal is open, run the following:<br>
-                </span>
-                </p>
-            </div>
-            <div class="bg-gray-100 text-gray-800 p-2 rounded-md font-mono">
-                <span id="modal-code-snippet">docker pull helloredwing/vector && docker-compose up</span>
-                <button id="copy-button3" onclick="copyToClipboard('#modal-code-snippet', 'copy-button3')" class="text-xs bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-1 px-2 rounded">
-                Copy
-                </button>                   
-            </div>
-            <br>
-            <button id="close-modal-button" class="px-4 py-2 bg-indigo-500 text-white text-base font-medium rounded-md w-full shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-300">
-                Close
-            </button>                       
-            </div>
-        </div>
-        </div>              
+        </div>          
     </div>             
 </div>
