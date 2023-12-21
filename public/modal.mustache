@@ -1,0 +1,29 @@
+<div id="terminal-modal" class="hidden fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full">
+    <div class="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white">
+        <div class="mt-3 text-center">
+        <h3 class="text-lg leading-6 font-medium text-gray-900">Terminal Instructions</h3>
+        <div class="mt-2 px-7 py-3">
+            <p class="text-sm text-gray-500">
+            Be sure to have <a href="https://docs.docker.com/get-docker/">Docker</a> running 🐳<br><br>
+            <span class=border-b">To open the terminal, follow these steps</span><br><br>
+            <span>
+                1. On Windows, press Win + R, type "cmd", and press Enter.<br>
+                2. On macOS, press Command + Space, type "Terminal", and press Enter.<br>
+                3. On Linux, use your desktop environment’s application launcher and search for "Terminal".<br><br>
+                Once the terminal is open, run the following:<br>
+            </span>
+            </p>
+        </div>
+        <div class="bg-gray-100 text-gray-800 p-2 rounded-md font-mono">
+            <span id="modal-code-snippet">docker pull helloredwing/vector && docker-compose up</span>
+            <button id="copy-button3" onclick="copyToClipboard('#modal-code-snippet', 'copy-button3')" class="text-xs bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-1 px-2 rounded">
+            Copy
+            </button>                   
+        </div>
+        <br>
+        <button id="close-modal-button" class="px-4 py-2 bg-indigo-500 text-white text-base font-medium rounded-md w-full shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-300">
+            Close
+        </button>                       
+        </div>
+    </div>
+</div>    

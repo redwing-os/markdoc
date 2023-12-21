@@ -162,9 +162,12 @@
         </div>                         
       </div>
       
+      <div style="z-index:1000">
+        {{> modal }}
+      </div>      
       <div class="main-content dark:border-gray-800 dark:mr-8 text-black bg-white dark:bg-black dark:text-white">
           {{> tab-component }}
-        </div>
+      </div>
       <div class="border-l dark:border-gray-800 code-content markdown-body text-black bg-white dark:bg-gray-900 dark:text-white">
           {{{htmlContent}}}
       </div>
