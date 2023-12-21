@@ -22,7 +22,7 @@ app.get('/', (req, res) => {
   const markdownContent = fs.readFileSync(markdownFilePath, 'utf8');
   const htmlContent = marked.parse(markdownContent);
 
-  const templatePath = path.join(__dirname, 'public/layout.html');
+  const templatePath = path.join(__dirname, 'public/index.html');
   fs.readFile(templatePath, 'utf8', (err, templateHtml) => {
     if (err) {
       res.status(500).send('Error loading the template');
