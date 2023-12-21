@@ -22,20 +22,21 @@ app.get('/', (req, res) => {
   const markdownContent = fs.readFileSync(markdownFilePath, 'utf8');
   const htmlContent = marked.parse(markdownContent);
 
-  const templatePath = path.join(__dirname, 'public/index.html');
+  const templatePath = path.join(__dirname, 'public/index.mustache');
   fs.readFile(templatePath, 'utf8', (err, templateHtml) => {
     if (err) {
+      console.error(err); // Log the error to the console
       res.status(500).send('Error loading the template');
       return;
     }
 
     // Read tab content
-    const tab1 = fs.readFileSync(path.join(__dirname, 'public/tab1.html'), 'utf8');
-    const tab2 = fs.readFileSync(path.join(__dirname, 'public/tab2.html'), 'utf8');
+    const tab1 = fs.readFileSync(path.join(__dirname, 'public/tab1.mustache'), 'utf8');
+    const tab2 = fs.readFileSync(path.join(__dirname, 'public/tab2.mustache'), 'utf8');
 
     // Render with Mustache
     const rendered = mustache.render(templateHtml, { htmlContent }, {
-      'tab-component': fs.readFileSync(path.join(__dirname, 'public/tab-component.html'), 'utf8'),
+      'tab-component': fs.readFileSync(path.join(__dirname, 'public/tab-component.mustache'), 'utf8'),
       'tab1': tab1,
       'tab2': tab2
     });
