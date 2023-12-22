@@ -2,20 +2,20 @@
 <h3 class="font-semibold text-black dark:bg-dark dark:text-white border-b dark:border-slate-800 pb-1 py-1">Client Libraries</h3>
 <div class="internal">
     <!-- Navigation links here -->
-    <a href="#python">Python</a><br>
-    <a href="#csharp">C#</a><br>
-    <a href="#java">Java</a><br>
-    <a href="#cpp">C++</a><br>
-    <a href="#ruby">Ruby</a><br>
+    <a href="#python" data-scroll="700" class="scroll-link">Python</a><br>
+    <a href="#csharp" data-scroll="700" class="scroll-link">C#</a><br>
+    <a href="#java" data-scroll="700" class="scroll-link">Java</a><br>
+    <a href="#cpp" data-scroll="700" class="scroll-link">C++</a><br>
+    <a href="#ruby" data-scroll="700" class="scroll-link">Ruby</a><br>
 
     <hr class="h-px my-4 bg-gray-200 border-0 bg-transparent">
     <h3 class="font-semibold text-black dark:bg-dark dark:text-white border-b dark:border-slate-800 pb-1">Scenarios</h3>
-    <a href="#transaction_fraud_anomaly">Transaction Fraud Anomaly</a><br>
-    <a href="#network_threat_detection">Network Threat Detection</a><br>            
-    <a href="#product_recommendation">Product Recommendation</a><br>            
-    <a href="#restock_low_inventory">Restock Low Inventory</a><br>            
-    <a href="#inventory_demand_forecast">Inventory Demand Forecast</a><br>
-    <a href="#healthcare_semantic_search">Healthcare Semantic Search</a><br>
+    <a href="#transaction_fraud_anomaly" data-scroll="700" class="scroll-link">Transaction Fraud Anomaly</a><br>
+    <a href="#network_threat_detection" data-scroll="700" class="scroll-link">Network Threat Detection</a><br>            
+    <a href="#product_recommendation" data-scroll="700" class="scroll-link">Product Recommendation</a><br>            
+    <a href="#restock_low_inventory" data-scroll="700" class="scroll-link">Restock Low Inventory</a><br>            
+    <a href="#inventory_demand_forecast" data-scroll="700" class="scroll-link">Inventory Demand Forecast</a><br>
+    <a href="#healthcare_semantic_search" data-scroll="700" class="scroll-link">Healthcare Semantic Search</a><br>
 </div>
 
 <hr class="h-px my-4 bg-gray-200 border-0 bg-transparent">
@@ -53,3 +53,24 @@
     </div>
 </div>                         
 </div>
+
+
+<script>
+  // This will wait for the DOM to load before running the script
+  document.addEventListener('DOMContentLoaded', function() {
+    // Select all links with the 'scroll-link' class
+    document.querySelectorAll('.scroll-link').forEach(function(link) {
+      // Add a click event listener to each link
+      link.addEventListener('click', function(event) {
+        // Prevent the default anchor link behavior
+        event.preventDefault();
+        // The scrollBy function scrolls the document by the specified number of pixels
+        window.scrollBy({
+          top: 700, // Scroll down 700 pixels
+          left: 0,
+          behavior: 'smooth' // Smoothly scroll
+        });
+      });
+    });
+  });
+</script>
