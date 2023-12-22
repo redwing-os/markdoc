@@ -55,9 +55,9 @@
       </div>
  
       <!-- Modal with higher z-index -->
-      <div style="z-index:1000" class="absolute inset-0 lg:relative lg:order-3 hidden lg:block">
+      <!-- <div style="z-index:1000" class="absolute inset-0 lg:relative lg:order-3 hidden lg:block">
           {{> modal }}
-      </div>
+      </div> -->
       <div class="main-content min-h-screen dark:border-gray-800 dark:mr-8 text-black bg-white dark:bg-black dark:text-white w-full lg:w-3/4 lg:order-1 overflow-auto">
         {{> tab-component }}
       </div>
@@ -67,6 +67,20 @@
       
       <!-- <div x-show="isSidebarOpen" class="fixed inset-0 bg-black bg-opacity-50 z-10" x-show="isSidebarOpen" @click="isSidebarOpen = false" style="display: none;"></div> -->
     </div>    
+    
+    <script>
+        const openModalButton = document.getElementById('open-terminal-button');
+        const closeModalButton = document.getElementById('close-modal-button');
+        const modal = document.getElementById('terminal-modal');
+    
+        openModalButton.addEventListener('click', () => {
+        modal.classList.remove('hidden');
+        });
+    
+        closeModalButton.addEventListener('click', () => {
+        modal.classList.add('hidden');
+        });
+    </script>
   
     <script>
         document.querySelectorAll('.internal a').forEach(link => {
