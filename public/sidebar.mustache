@@ -56,20 +56,18 @@
 
 
 <script>
-  // This will wait for the DOM to load before running the script
   document.addEventListener('DOMContentLoaded', function() {
-    // Select all links with the 'scroll-link' class
     document.querySelectorAll('.scroll-link').forEach(function(link) {
-      // Add a click event listener to each link
       link.addEventListener('click', function(event) {
-        // Prevent the default anchor link behavior
         event.preventDefault();
-        // The scrollBy function scrolls the document by the specified number of pixels
-        window.scrollBy({
-          top: 700, // Scroll down 700 pixels
-          left: 0,
-          behavior: 'smooth' // Smoothly scroll
-        });
+        // Check if the window's inner width is less than or equal to 768 pixels
+        if (window.innerWidth <= 500) {
+          window.scrollBy({
+            top: 700,
+            left: 0,
+            behavior: 'smooth'
+          });
+        }
       });
     });
   });
