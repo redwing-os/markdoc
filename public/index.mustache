@@ -20,130 +20,69 @@
         <span><a href="https://www.redwing.ai"> | Docs</a></span>
       </div>
       <nav>
-        <!-- Items on top right -->
-        <!-- <a href="https://redwing.ai">Home</a> -->
-        <!-- &nbsp;&nbsp;|&nbsp;&nbsp;  -->
         <span class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-blue-400 border border-blue-400">
           <a href="#">v1.0.6</a><br>
         </span>
       </nav>
     </div>
-    <div class="container">
-      <div class="sidebar border-r dark:border-slate-800 bg-gray-100 text-black dark:bg-black dark:text-white">
-        <h3 class="font-semibold text-black dark:bg-dark dark:text-white border-b dark:border-slate-800 pb-1 py-1">Client Libraries</h3>
-        <div class="internal">
-          <!-- Navigation links here -->
-          <a href="#python">Python</a><br>
-          <a href="#csharp">C#</a><br>
-          <a href="#java">Java</a><br>
-          <a href="#cpp">C++</a><br>
-          <a href="#ruby">Ruby</a><br>
 
-          <hr class="h-px my-4 bg-gray-200 border-0 bg-transparent">
-          <h3 class="font-semibold text-black dark:bg-dark dark:text-white border-b dark:border-slate-800 pb-1">Applications</h3>
-          <a id="open-terminal-button" class="">
-            Terminal
-          </a>      
-          <!-- <br>        
-          <a href="#sandbox">Sandbox</a>
-          <br>  
-          <a id="open-terminal-button" class="">
-            Terraform
-          </a>                -->
-
-          <hr class="h-px my-4 bg-gray-200 border-0 bg-transparent">
-          <h3 class="font-semibold text-black dark:bg-dark dark:text-white border-b dark:border-slate-800 pb-1">Scenarios</h3>
-          <a href="#transaction_fraud_anomaly">Transaction Fraud Anomaly</a><br>
-          <a href="#network_threat_detection">Network Threat Detection</a><br>            
-          <a href="#product_recommendation">Product Recommendation</a><br>            
-          <a href="#restock_low_inventory">Restock Low Inventory</a><br>            
-          <a href="#inventory_demand_forecast">Inventory Demand Forecast</a><br>
-          <a href="#healthcare_semantic_search">Healthcare Semantic Search</a><br>
-        </div>
-
-        <hr class="h-px my-4 bg-gray-200 border-0 bg-transparent">
-        <hr class="h-px my-4 bg-gray-200 border-0 bg-transparent">
-                 
-        <!-- <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-800">
-        <span>Vector v1.0.6</span>    
-        <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-800"> -->
-
-        <!-- Add more links as needed -->
-
-        <!-- Spacer to push the bottom content down -->
-        <div class="space-y-8 mb-4 flex-grow"></div>
-    
-        <!-- Bottom Content -->
-        <div class="space-y-8 mb-4">
-            <!-- Install Docker Card -->
-            <div class="bg-white rounded-md border border-gray-200 shadow-md dark:bg-gray-900 dark:border-gray-700 p-5">
-                <h5 class="text-xl font-semibold tracking-tight text-black dark:text-white">Install Docker</h5>
-                <hr class="h-px my-2 bg-gray-200 border-0 dark:bg-gray-800">
-                <p class="mb-3 font-normal text-black dark:text-gray-400">To get started with our container, first install Docker.</p>
-                <a href="https://docs.docker.com/get-docker/" target="_blank" class="w-full inline-flex items-center justify-center py-2 px-3 text-sm font-medium text-center text-white bg-indigo-700 rounded-lg hover:bg-indigo-600 focus:ring-4 focus:ring-indigo-300 dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indigo-800 dark:text-white">
-                  Visit Docker 
-                </a>              
-            </div>
-    
-            <!-- Client  Card -->
-            <div class="bg-white rounded-md border border-gray-200 shadow-md dark:bg-gray-900 dark:border-gray-700 p-5">
-                <h5 class="text-xl font-semibold tracking-tight text-black dark:text-white">Vector Clients</h5>
-                <hr class="h-px my-2 bg-gray-200 border-0 dark:bg-gray-800">
-                <p class="mb-3 font-normal text-black dark:text-gray-400">Browse all our implementation libraries from Java to Ruby.</p>
-                <a href="https://www.github.com/redwing-os/client" target="_blank" class="w-full inline-flex items-center justify-center py-2 px-3 text-sm font-medium text-center text-white bg-indigo-700 rounded-lg hover:bg-indigo-600 focus:ring-4 focus:ring-indigo-300 dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indigo-800 dark:text-white">
-                  Visit Client Libraries
-                </a>
-            </div>
-        </div>                         
+    <div class="container flex flex-col lg:flex-row">
+      <!-- Sidebar that disappears on mobile sizes -->
+      <div class="sidebar bg-gray-100 text-black dark:bg-black dark:text-white w-full lg:w-1/4 border-r dark:border-slate-800 lg:block hidden md:block md:hidden">
+          {{> sidebar }}
       </div>
-      
-      <div style="z-index:1000">
+      <!-- Modal with higher z-index -->
+      <div style="z-index:10" class="absolute inset-0 lg:relative lg:order-3 hidden lg:block">
           {{> modal }}
-      </div>      
-      <div class="main-content dark:border-gray-800 dark:mr-8 text-black bg-white dark:bg-black dark:text-white">
+      </div>
+      <!-- Main content that takes full width on mobile screens and 3/4 width on large screens and up -->
+      <div class="main-content dark:border-gray-800 dark:mr-8 text-black bg-white dark:bg-black dark:text-white w-full lg:w-3/4 lg:order-1">
           {{> tab-component }}
       </div>
-      <div class="border-l dark:border-gray-800 code-content markdown-body text-black bg-white dark:bg-gray-900 dark:text-white">
+      <!-- Code content that takes full width on mobile screens and automatically assigned width on large screens and up -->
+      <div class="code-content markdown-body border-l dark:border-gray-800 text-black bg-white dark:bg-gray-900 dark:text-white w-full lg:order-2 overflow-auto">
           {{{htmlContent}}}
-      </div>
-    </div>
+      </div>      
+    </div>    
+    
     <script>
-      const openModalButton = document.getElementById('open-terminal-button');
-      const closeModalButton = document.getElementById('close-modal-button');
-      const modal = document.getElementById('terminal-modal');
-
-      openModalButton.addEventListener('click', () => {
+        const openModalButton = document.getElementById('open-terminal-button');
+        const closeModalButton = document.getElementById('close-modal-button');
+        const modal = document.getElementById('terminal-modal');
+    
+        openModalButton.addEventListener('click', () => {
         modal.classList.remove('hidden');
-      });
-
-      closeModalButton.addEventListener('click', () => {
+        });
+    
+        closeModalButton.addEventListener('click', () => {
         modal.classList.add('hidden');
-      });
+        });
     </script>
+  
     <script>
-      document.querySelectorAll('.internal a').forEach(link => {
-          link.addEventListener('click', function(event) {
-          event.preventDefault();
-
-          const language = this.getAttribute('href').substring(1);
-          const markdownPath = `/docs/${language}.markdoc`;
-
-          fetch(markdownPath)
-              .then(response => {
-              if (!response.ok) {
-                  throw new Error(`HTTP error! status: ${response.status}`);
-              }
-              return response.text();
-              })
-              .then(markdown => {
-              const htmlContent = marked.parse(markdown); // Use `parse` method
-              document.querySelector('.code-content').innerHTML = htmlContent;
-              })
-              .catch(error => {
-              console.error('Error fetching the markdown content:', error);
-              });
-          });
-      });      
+        document.querySelectorAll('.internal a').forEach(link => {
+            link.addEventListener('click', function(event) {
+            event.preventDefault();
+    
+            const language = this.getAttribute('href').substring(1);
+            const markdownPath = `/docs/${language}.markdoc`;
+    
+            fetch(markdownPath)
+                .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.text();
+                })
+                .then(markdown => {
+                const htmlContent = marked.parse(markdown); // Use `parse` method
+                document.querySelector('.code-content').innerHTML = htmlContent;
+                })
+                .catch(error => {
+                console.error('Error fetching the markdown content:', error);
+                });
+            });
+        });      
     </script>
   </body>
 </html>
