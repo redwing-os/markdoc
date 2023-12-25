@@ -120,9 +120,6 @@ def enhanced_compliance_risk_detection(df):
         df['Risk_Score'] = df.apply(lambda row: calculate_risk_score(
         row['Consumer complaint narrative'],
         row['Company response to consumer'],
-        # row.get('previous_complaints_count', 0),  # Replace with actual column name
-        # row.get('resolution_timeframe', 0),      # Replace with actual column name
-        # row.get('public_impact', False)          # Replace with actual column name
     ), axis=1)
     return df
 ```
