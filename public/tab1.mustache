@@ -47,7 +47,6 @@
             file in current directory which contains your container license key to run the Vector Docker container and enables allotted core utilization within VM</p>
         <div class="code-sandbox bg-gray-100 dark:bg-slate-900 text-white mt-2 p-4 pt-7 pl-6 rounded-lg font-mono text-sm relative">
         <p id="code-snippet6" class="text-black dark:text-green-400">
-            <br>
             LICENSE_KEY=[your-license-key]
             <br>
             CUSTOMER_ID=[your-customer-id]
@@ -87,7 +86,7 @@
         <!-- Mockup of interactive code terminal -->
         <p class="border-b dark:border-slate-800 pb-4">Establishes Cassandra connection in container to run initialization commands
         <div class="code-sandbox bg-gray-100 dark:bg-slate-900 text-white mt-2 p-4 pt-7 pl-6 rounded-lg font-mono text-sm relative">
-        <p id="code-snippet4" class="text-black dark:text-green-400">docker exec -it redwing_vector-cassandra-1 cqlsh</p>
+        <p id="code-snippet4" class="text-black dark:text-green-400">docker exec -it sandbox-cassandra-1 cqlsh</p>
         <button id="copy-button4" onclick="copyToClipboard('#code-snippet4', 'copy-button4')" class="absolute top-7 right-6 text-xs bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-1 px-2 rounded">
             Copy
         </button>
