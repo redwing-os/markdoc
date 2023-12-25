@@ -41,12 +41,19 @@
 
         <h3 class="text-4xl font-semibold text-black dark:bg-dark dark:text-white">Set Environment Variables</h3>
         <!-- Mockup of interactive code terminal -->
-        <p class="border-b dark:border-slate-800 pb-4">Sets your container license key to run the Vector Docker container and enables allotted core utilization within VM</p>
+        <p class="border-b dark:border-slate-800 pb-4">Create a <span class="bg-grey-100 text-grey-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-grey-400 border border-grey-400">
+            .env            
+            </span>
+            file in current directory which contains your container license key to run the Vector Docker container and enables allotted core utilization within VM</p>
         <div class="code-sandbox bg-gray-100 dark:bg-slate-900 text-white mt-2 p-4 pt-7 pl-6 rounded-lg font-mono text-sm relative">
         <p id="code-snippet6" class="text-black dark:text-green-400">
-            export LICENSE_KEY=[your-license-key]
             <br>
-            export CUSTOMER_ID=[your-customer-id]
+            LICENSE_KEY=[your-license-key]
+            CUSTOMER_ID=[your-customer-id]
+            DB_PORT=9042
+            DB_HOST=cassandra
+            DB_IMAGE=cassandra:latest
+            RUST_BACKTRACE=full            
         </p>
         <button id="copy-button6" onclick="copyToClipboard('#code-snippet6', 'copy-button6')" class="absolute top-7 right-6 text-xs bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-1 px-2 rounded">
             Copy
@@ -86,13 +93,19 @@
         <!-- Mockup of interactive code terminal -->
         <p class="border-b dark:border-slate-800 pb-4">Establishes Cassandra tables and keyspaces for the Vector gRPC service
         <div class="code-sandbox bg-gray-100 dark:bg-slate-900 text-white mt-2 p-4 pt-7 pl-6 rounded-lg font-mono text-sm relative">
-        <p id="code-snippet5" class="text-black dark:text-green-400">CREATE KEYSPACE redwing_keyspace WITH replication = {'class': 'SimpleStrategy', 'replication_factor': 1};
-
+        <p id="code-snippet5" class="text-black dark:text-green-400">
+            CREATE KEYSPACE redwing_keyspace WITH replication = {'class': 'SimpleStrategy', 'replication_factor': 1};
+            <br>
             CREATE TABLE redwing_keyspace.vectors (
+                <br>
                 key text PRIMARY KEY,
+                <br>
                 vector list<float>,
+                <br>
                 created_at timestamp,
+                <br>
                 updated_at timestamp
+                <br>
             );</p>
         <button id="copy-button5" onclick="copyToClipboard('#code-snippet5', 'copy-button5')" class="absolute top-7 right-6 text-xs bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-1 px-2 rounded">
             Copy
@@ -109,7 +122,7 @@
         <p id="code-snippet9" class="text-black dark:text-green-400">
             sudo apt install python3-pip
             <br>
-            pip3 install grpcio-tools 
+            pip3 install grpcio-tools sentence-transformers
             <br>
             python3 run/_test1.py</p>
         <button id="copy-button9" onclick="copyToClipboard('#code-snippet9', 'copy-button9')" class="absolute top-7 right-6 text-xs bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-1 px-2 rounded">
