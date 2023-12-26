@@ -119,8 +119,8 @@
         
         <h3 class="text-4xl font-semibold text-black dark:bg-dark dark:text-white">Run Python Script</h3>
         <!-- Mockup of interactive code terminal -->
-        <p class="border-b dark:border-slate-800 pb-4">Runs a simple Python script to test the system is setup properly, make sure you are in the &nbsp;
-            <span class="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">Sandbox</span>
+        <p class="border-b dark:border-slate-800 pb-4">Runs a simple Python script to test the system is setup properly, make sure you are in the
+            <span class="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">/sandbox</span>
             &nbsp;directory
         <div class="code-sandbox bg-gray-100 dark:bg-slate-900 text-white mt-2 p-4 pt-7 pl-6 rounded-lg font-mono text-sm relative">
         <p id="code-snippet9" class="text-black dark:text-green-400">
@@ -134,6 +134,20 @@
         </button>
         </div>    
         <br>     
+
+        <h3 class="text-4xl font-semibold text-black dark:bg-dark dark:text-white">Wind Down</h3>
+        <!-- Mockup of interactive code terminal -->
+        <p class="border-b dark:border-slate-800 pb-4">To clean up containers and wind down the local sandbox environment run the following from the
+            <span class="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">/sandbox</span>
+            &nbsp;directory
+        <div class="code-sandbox bg-gray-100 dark:bg-slate-900 text-white mt-2 p-4 pt-7 pl-6 rounded-lg font-mono text-sm relative">
+        <p id="code-snippet9" class="text-black dark:text-green-400">
+            docker-compose down</p>
+        <button id="copy-button9" onclick="copyToClipboard('#code-snippet9', 'copy-button9')" class="absolute top-7 right-6 text-xs bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-1 px-2 rounded">
+            Copy
+        </button>
+        </div>    
+        <br>             
 
         <div class="internal">
         <a href="/sandbox/sandbox" class="inline-flex items-center justify-center p-5 text-base font-medium text-gray-500 rounded-lg bg-gray-50 hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700 dark:hover:text-white">
