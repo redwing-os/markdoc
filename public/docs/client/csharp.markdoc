@@ -1,5 +1,47 @@
-## VectorDB C# Client
+## VectorDB C# Protocol Buffer Definition
 
-```
-C# client docs coming soon.
-```
+This Markdoc document provides detailed information about the VectorDB Protocol Buffer definition, specifically for VectorWriteRequest, VectorBatchWriteRequest, VectorWriteResponse, and more. These are part of the auto-generated code base for the VectorDB service.
+
+## VectorWriteRequest
+
+### Description
+The `VectorWriteRequest` message is used to write a vector to the VectorDB database, identified by a unique key.
+
+### Fields
+- `key`: The unique identifier for the vector.
+- `vector`: A repeated field representing the vector elements.
+- `created_at`: Timestamp indicating when the vector was created.
+- `updated_at`: Timestamp indicating when the vector was last updated.
+
+## VectorBatchWriteRequest
+
+### Description
+The `VectorBatchWriteRequest` message allows for batch writing of multiple vectors to the database.
+
+### Fields
+- `vectors`: A repeated field containing multiple `VectorWriteRequest` messages.
+
+## VectorWriteResponse
+
+### Description
+The `VectorWriteResponse` message provides feedback after attempting to write a vector to the database.
+
+### Fields
+- `success`: A boolean field indicating whether the write operation was successful.
+
+## VectorReadRequest
+
+### Description
+The `VectorReadRequest` message is used to read a vector from the VectorDB database.
+
+### Fields
+- `key`: The unique identifier for the vector to be read.
+
+## VectorReadResponse
+
+### Description
+The `VectorReadResponse` message provides the vector data in response to a read request.
+
+### Fields
+- `vector`: The vector data associated with the specified key.
+- `found`: A boolean field indicating if the vector was found.
