@@ -1,5 +1,76 @@
-## VectorDB Impl
+## Network Log Anomaly Detection App
+
+This Streamlit application is designed to detect anomalies within network logs using enhanced threat detection algorithms. It provides a simple and interactive user interface to analyze network log data and identify potential threats.
+
+## Streamlit Interface
+
+The app leverages Streamlit for its web interface, allowing users to input parameters and display the results of the anomaly detection process.
+
+## Setup
+
+The app requires the `streamlit` package and the `network_enhanced_threat_detection` module, which should be located in the `../run` directory.
 
 ```
-Detailed documentation coming soon.
+import sys
+import streamlit as st
+sys.path.append('../run') # Adjust the path as necessary
+
+from network_enhanced_threat_detection import main
 ```
+
+## Function: `display_features`
+
+A helper function to display network log features and their corresponding values in the Streamlit app.
+
+```
+def display_features(features, title):
+# ... Function implementation ...
+```
+
+## Function: `streamlit_app`
+
+The core function that initializes the Streamlit app and incorporates the network log analysis logic.
+
+```
+def streamlit_app():
+# ... Function implementation ...
+```
+
+### Streamlit Elements:
+
+- **Title**: Sets the title of the web page.
+  
+```
+st.title("Network Log Anomaly Detection")
+```
+
+- **User Input**: A sidebar input for specifying the number of log entries to analyze.
+
+```
+num_entries = st.sidebar.number_input("Number of log entries", min_value=100, max_value=10000, value=1000)
+```
+
+- **Analyze Button**: Initiates the analysis of log data when clicked.
+
+```
+if st.button("Analyze Log Data"):
+# ... Analysis logic ...
+```
+
+- **Results Display**: Shows the details of the detected threats and average features of both normal and anomalous logs.
+
+```
+st.header("Anomaly Detection Results")
+```
+
+## Running the App
+
+To run the app, ensure that Streamlit is installed and execute the following command from the terminal:
+
+```
+streamlit run network_anomaly_dashboard.py.py
+```
+
+## Note
+
+This application aids network administrators and cybersecurity professionals in quickly identifying and responding to network threats through simulated data.
