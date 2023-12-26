@@ -1,0 +1,102 @@
+## Vector Sandbox
+
+This documentation is designed adjacent to the main setup you see on the left and is intended to streamline your understanding and implementation of our VectorDB client library within your applications.  
+
+Before diving into database operations, ensure you have acquired the necessary software license and customer ID by subscribing to our service via link below. These credentials are essential for container authentication and will be provided to you via email.
+
+```
+To get started visit: https://redwing.ai/plans
+```
+
+## Set environment variables
+
+Upon receiving your license key and customer ID, export them as environment variables in your system:
+
+```
+LICENSE_KEY=[your-license-key]
+CUSTOMER_ID=[your-customer-id]
+DB_PORT=9042
+DB_HOST=cassandra
+DB_IMAGE=cassandra:latest
+RUST_BACKTRACE=full      
+```
+
+Pull and compose the Vector Docker image, this will start up the server up to the number of cores that are enabled in your software license.
+
+```
+docker pull helloredwing/vector && docker-compose up
+```
+
+Or run:
+
+```
+sh start.sh
+```
+
+Once docker is running both the server and the db enter the Cassandra db through the following
+
+```
+docker ps
+```
+
+The Cassandra instance will look something like the following:
+
+```
+b9ef8ea004cb   cassandra:latest                "docker-entrypoint.s…"   2 hours ago   Up 2 hours   7000-7001/tcp, 7199/tcp, 9160/tcp, 0.0.0.0:9042->9042/tcp 
+```
+
+The Cassandra container ID in this instance is `b9ef8ea004cb` from here you can execute the following to enter the container and setup the DB
+
+```
+docker exec -it <cassandra-id> cqlsh
+```
+
+Then once you are inside the Cassandra container run the following and utilize the db.sh file in this repo
+
+### For testing on local Cassandra with detached Docker
+
+```
+docker exec -it redwing_vector-cassandra-1 cqlsh
+```
+
+Then run cqlsh commands, todo: incorporate this into the default cassandra db build during provision
+
+```
+CREATE KEYSPACE redwing_keyspace WITH replication = {'class': 'SimpleStrategy', 'replication_factor': 1};
+
+CREATE TABLE redwing_keyspace.vectors (
+    key text PRIMARY KEY,
+    vector list<float>,
+    created_at timestamp,
+    updated_at timestamp
+);
+```
+
+Alternatively run:
+
+```
+$ apt-get update && apt-get install -y vim
+$ touch db.sh
+$ vim db.sh
+
+Copy + Paste db.sh contents here and execute :wq
+
+$ sh db.sh
+$ exit
+```
+
+This should initialize the Vector database keyspace with redwing_vector and establish some tables for you to work with! You are now ready to start utilizing our client libraries to interact with our database and server.
+
+For convenience, we uploaded example scripts with our Python client for you to run outside the Docker container in the ```run``` folder to run them simply execute the following.
+
+```
+python3 run/_test1.py
+```
+
+Public Docker Hub image can be viewed here
+```
+https://hub.docker.com/r/helloredwing/vector
+```
+
+For help or questions please reach out to hello [at] redwing.ai
+
