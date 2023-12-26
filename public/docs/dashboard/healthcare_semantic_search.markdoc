@@ -1,5 +1,9 @@
 ## Healthcare Research Paper Semantic Search App
 
+```
+streamlit run healthcare_dashboard.py
+```
+
 This document outlines the Streamlit application designed for semantic searching of healthcare research papers. The app interacts with a backend service via gRPC to retrieve similar research papers based on a user's query.
 
 ## Streamlit Interface

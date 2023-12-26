@@ -1,5 +1,9 @@
 ## Network Log Anomaly Detection App
 
+```
+streamlit run network_anomaly_dashboard.py
+```
+
 This Streamlit application is designed to detect anomalies within network logs using enhanced threat detection algorithms. It provides a simple and interactive user interface to analyze network log data and identify potential threats.
 
 ## Streamlit Interface
@@ -68,7 +72,7 @@ st.header("Anomaly Detection Results")
 To run the app, ensure that Streamlit is installed and execute the following command from the terminal:
 
 ```
-streamlit run network_anomaly_dashboard.py.py
+streamlit run network_anomaly_dashboard.py
 ```
 
 ## Note
