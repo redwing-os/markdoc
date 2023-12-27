@@ -84,9 +84,14 @@
 
         <h3 class="text-4xl font-semibold text-black dark:bg-dark dark:text-white">Cassandra Connect</h3>
         <!-- Mockup of interactive code terminal -->
-        <p class="border-b dark:border-slate-800 pb-4">Establishes Cassandra connection in container to run initialization commands
+        <p class="border-b dark:border-slate-800 pb-4">Establishes Cassandra connection in container to run initialization commands, it will look something similar to 
+            <span class="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">sandbox_cassandra_1</span>
         <div class="code-sandbox bg-gray-100 dark:bg-slate-900 text-white mt-2 p-4 pt-7 pl-6 rounded-lg font-mono text-sm relative">
-        <p id="code-snippet4" class="text-black dark:text-green-400">docker exec -it sandbox_cassandra_1 cqlsh</p>
+        <p id="code-snippet4" class="text-black dark:text-green-400">
+            docker ps
+            <br>
+            docker exec -it &lt;your-docker-cassandra-container&gt; cqlsh
+        </p>
         <button id="copy-button4" onclick="copyToClipboard('#code-snippet4', 'copy-button4')" class="absolute top-7 right-6 text-xs bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-1 px-2 rounded">
             Copy
         </button>
