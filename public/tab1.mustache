@@ -124,9 +124,11 @@
         <p id="code-snippet9" class="text-black dark:text-green-400">
             sudo apt install python3-pip
             <br>
-            pip3 install grpcio-tools sentence-transformers
+            pip3 install grpcio grpcio-tools sentence-transformers numpy scikit-learn 
             <br>
-            python3 test/_test_e2e.py</p>
+            python3 test/_test_e2e.py
+            <br>        
+            find ./sample -maxdepth 1 -name "*.py" ! -name "vectordb_pb2*.py" -exec python3 {} \;</p>
         <button id="copy-button9" onclick="copyToClipboard('#code-snippet9', 'copy-button9')" class="absolute top-7 right-6 text-xs bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-1 px-2 rounded">
             Copy
         </button>
