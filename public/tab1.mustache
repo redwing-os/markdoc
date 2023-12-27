@@ -115,21 +115,57 @@
         </div>    
         <br>               
         
-        <h3 class="text-4xl font-semibold text-black dark:bg-dark dark:text-white">Run Python Script</h3>
+        <h3 class="text-4xl font-semibold text-black dark:bg-dark dark:text-white">Install Python3 and Pip</h3>
         <!-- Mockup of interactive code terminal -->
-        <p class="border-b dark:border-slate-800 pb-4">Runs a simple Python script to test the system is setup properly, make sure you are in the
+        <p class="border-b dark:border-slate-800 pb-4">Install all required dependencies into your system, this will change based on your runtime environment (Mac/Linux/etc), for Mac be sure to use <a href="https://brew.sh/">Homebrew</a> and use `brew install python3`, make sure you are in the
             <span class="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">/sandbox</span>
             &nbsp;directory
         <div class="code-sandbox bg-gray-100 dark:bg-slate-900 text-white mt-2 p-4 pt-7 pl-6 rounded-lg font-mono text-sm relative">
-        <p id="code-snippet9" class="text-black dark:text-green-400">
-            sudo apt install python3-pip
-            <br>
-            pip3 install grpcio grpcio-tools sentence-transformers numpy scikit-learn 
-            <br>
-            python3 test/_test_e2e.py
-            <br>        
+        <p id="code-snippet329" class="text-black dark:text-green-400">
+            sudo apt install python3-pip </p>
+        <button id="copy-button329" onclick="copyToClipboard('#code-snippet329', 'copy-button329')" class="absolute top-7 right-6 text-xs bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-1 px-2 rounded">
+            Copy
+        </button>
+        </div>    
+        <br>     
+
+        <h3 class="text-4xl font-semibold text-black dark:bg-dark dark:text-white">Install Python Dependencies</h3>
+        <!-- Mockup of interactive code terminal -->
+        <p class="border-b dark:border-slate-800 pb-4">Install all required dependencies into your system, this will change based on your runtime environment (Mac/Linux/etc), for Mac be sure to use <a href="https://brew.sh/">Homebrew</a> and use `brew install python3`, make sure you are in the
+            <span class="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">/sandbox</span>
+            &nbsp;directory
+        <div class="code-sandbox bg-gray-100 dark:bg-slate-900 text-white mt-2 p-4 pt-7 pl-6 rounded-lg font-mono text-sm relative">
+        <p id="code-snippet443 class="text-black dark:text-green-400">
+            pip3 install grpcio grpcio-tools sentence-transformers numpy scikit-learn </p>
+        <button id="copy-button443" onclick="copyToClipboard('#code-snippet443', 'copy-button443')" class="absolute top-7 right-6 text-xs bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-1 px-2 rounded">
+            Copy
+        </button>
+        </div>    
+        <br>     
+
+        <h3 class="text-4xl font-semibold text-black dark:bg-dark dark:text-white">Run E2E Tests</h3>
+        <!-- Mockup of interactive code terminal -->
+        <p class="border-b dark:border-slate-800 pb-4">To run end-to-end tests for all core gRPC functions, make sure you are in the
+            <span class="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">/sandbox</span>
+            &nbsp;directory and run the following
+        <div class="code-sandbox bg-gray-100 dark:bg-slate-900 text-white mt-2 p-4 pt-7 pl-6 rounded-lg font-mono text-sm relative">
+        <p id="code-snippet923" class="text-black dark:text-green-400">
+            python3 test/_test_e2e.py</p>
+        <button id="copy-button923" onclick="copyToClipboard('#code-snippet923', 'copy-button923')" class="absolute top-7 right-6 text-xs bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-1 px-2 rounded">
+            Copy
+        </button>
+        </div>    
+        <br>             
+
+        <h3 class="text-4xl font-semibold text-black dark:bg-dark dark:text-white">Run Generated Scenarios</h3>
+        <!-- Mockup of interactive code terminal -->
+        <p class="border-b dark:border-slate-800 pb-4">To run all sample data generated scenarios, make sure you are in the
+            <span class="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">/sandbox</span>
+            &nbsp;directory and run the following
+        <div class="code-sandbox bg-gray-100 dark:bg-slate-900 text-white mt-2 p-4 pt-7 pl-6 rounded-lg font-mono text-sm relative">
+        <p id="code-snippet297" class="text-black dark:text-green-400">  
             find ./sample -maxdepth 1 -name "*.py" ! -name "vectordb_pb2*.py" -exec python3 {} \;</p>
-        <button id="copy-button9" onclick="copyToClipboard('#code-snippet9', 'copy-button9')" class="absolute top-7 right-6 text-xs bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-1 px-2 rounded">
+        <button id="copy-button297" onclick="copyToClipboard('#code-snippet297', 'copy-button297')" class="absolute top-7 right-6 text-xs bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-1 px-2 rounded">
             Copy
         </button>
         </div>    
