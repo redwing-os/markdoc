@@ -90,7 +90,7 @@ This should initialize the Vector database keyspace with redwing_vector and esta
 For convenience, we uploaded example scripts with our Python client for you to run outside the Docker container in the ```run``` folder to run them simply execute the following.
 
 ```
-python3 run/_test1.py
+python3 test/_test_e2e.py
 ```
 
 Public Docker Hub image can be viewed here

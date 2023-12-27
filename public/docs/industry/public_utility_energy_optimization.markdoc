@@ -1,7 +1,7 @@
 ## Public Utility Energy Optimization
 
 ```
-python3 run/public_utility_energy_optimization.py
+python3 sample/public_utility_energy_optimization.py
 ```
 
 This Python script is designed to optimize energy rates for public utilities by identifying outliers and anomalies in utility data. 
