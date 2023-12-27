@@ -10,6 +10,7 @@ This project includes a Python script that integrates with Google BigQuery to re
 
 ### Core Functionality:
 
+```
 -BigQuery Integration: Fetches Ethereum transaction data for detailed analysis.
 
 -Anomaly Detection: Utilizes IsolationForest from Scikit-Learn for identifying unusual transactions.
@@ -20,9 +21,11 @@ This project includes a Python script that integrates with Google BigQuery to re
 
 -MACD Calculation: (Commented out due to plan limitations) Can calculate the Moving Average Convergence Divergence, a trend-following momentum indicator.
 Potential Expansions
+```
 
 ### Future Potential Improvements
 
+```
 -Enhanced Market Analysis: Integrate more sophisticated trading algorithms and indicators.
 
 -Automated Trading: Implement strategies for automated buying/selling based on certain triggers.
@@ -32,11 +35,13 @@ Potential Expansions
 -Real-Time Data Processing: Adapt the script to work with real-time transaction data for more dynamic analysis and trading decisions.
 
 -Integration with Other APIs: Incorporate data from other cryptocurrency exchanges and financial APIs for a broader market view.
+```
 
 ### Prerequisites
 
 To run the script, you will need:
 
+```
 -Python 3.6 or later.
 
 -Access to Google Cloud Platform with BigQuery API enabled.
@@ -48,6 +53,7 @@ To run the script, you will need:
 -A running instance of our vector database with gRPC endpoint exposed.
 
 -The required Python packages installed.
+```
 
 Installation
 
@@ -71,9 +77,9 @@ Set up the `BIGQUERY_PRIVATE_KEY` .env file with your Google service account cre
 BIGQUERY_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\nAIzaSyC1s6PgiD10UBgUjYIdplfyYjyE2ZIWFPM\n-----END PRIVATE KEY-----\n" Register One here: console.cloud.google.com/apis/credentials
 COINMARKETCAP_API_KEY= Register one here: https://pro.coinmarketcap.com/account
 COINBASE_API_KEY= Register one here https://help.coinbase.com/en/exchange/managing-my-account/how-to-create-an-api-key
-COINBASE_API_SECRET=
-COINBASE_PASSPHRASE=
-COINBASE_PORTFOLIO_ID=
+COINBASE_API_SECRET= see above
+COINBASE_PASSPHRASE= see above
+COINBASE_PORTFOLIO_ID= see above
 ```
 
 Now from the credentials page be sure that you have generated a service account. Afterwards, in the Python file update the following from what you generate in the admin console. Important to note that this key needs to be generated from a service account which can be found in `credentials > service accounts > keys > add key > create new key > JSON`
@@ -81,11 +87,11 @@ Now from the credentials page be sure that you have generated a service account.
 ```
 service_account_info = {
     "type": "service_account",
-    "project_id": "vector-sandbox",
-    "private_key_id": "0826950ebad2a467ad7083d5f13df15e5c6c7948",
+    "project_id": "{your-project-id}",
+    "private_key_id": "{private-key-id}",
     "private_key": os.getenv("BIGQUERY_PRIVATE_KEY"),
-    "client_email": "vector@vector-sandbox.iam.gserviceaccount.com",
-    "client_id": "111349678665442531010",
+    "client_email": "{email}@{project-id}.iam.gserviceaccount.com",
+    "client_id": "{your-client-id}",
     "auth_uri": "https://accounts.google.com/o/oauth2/auth",
     "token_uri": "https://oauth2.googleapis.com/token",
     "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
