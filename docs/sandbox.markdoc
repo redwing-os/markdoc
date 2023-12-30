@@ -16,9 +16,12 @@ Upon receiving your license key and customer ID, export them as environment vari
 LICENSE_KEY=[your-license-key]
 CUSTOMER_ID=[your-customer-id]
 DB_PORT=9042
-DB_HOST=cassandra
 DB_IMAGE=cassandra:latest
-RUST_BACKTRACE=full      
+RUST_BACKTRACE=full  
+DB_STARTUP_CMD=""
+
+# For ScyllaDB Only
+DB_STARTUP_CMD="--smp 1 --memory 750M --overprovisioned 1 --listen-address=0.0.0.0 --rpc-address=0.0.0.0 --broadcast-rpc-address=127.0.0.1"
 ```
 
 Pull and compose the Vector Docker image, this will start up the server up to the number of cores that are enabled in your software license.
