@@ -8,9 +8,23 @@ Before diving into database operations, ensure you have acquired the necessary s
 To get started visit: https://redwing.ai/plans
 ```
 
-## Set environment variables
+## Clone Repo & Set Environment Variables
 
-Upon receiving your license key and customer ID, export them as environment variables in your system:
+First start by cloning the Sandbox repository and change into its directory
+
+```
+git clone https://github.com/redwing-os/sandbox.git
+
+cd sandbox
+```
+
+Upon receiving your license key and customer ID in email, add them to a .env file within the newly cloned Sandbox directory:
+
+```
+touch .env
+```
+
+And enter the following values in the file below for Cassandra configuration:
 
 ```
 LICENSE_KEY=[your-license-key]
@@ -18,11 +32,17 @@ CUSTOMER_ID=[your-customer-id]
 DB_PORT=9042
 DB_IMAGE=cassandra:latest
 RUST_BACKTRACE=full  
-
-# For Cassandra Only
 DB_STARTUP_CMD=""
+```
 
-# For ScyllaDB Only
+If you would like to implement ScyllaDB enter the following values in the .env file for configuration:
+
+```
+LICENSE_KEY=[your-license-key]
+CUSTOMER_ID=[your-customer-id]
+DB_PORT=9042
+DB_IMAGE=scylladb/scylla:latest
+RUST_BACKTRACE=full  
 DB_STARTUP_CMD="--smp 1 --memory 750M --overprovisioned 1 --listen-address=0.0.0.0 --rpc-address=0.0.0.0 --broadcast-rpc-address=127.0.0.1"
 ```
 
@@ -44,27 +64,19 @@ Once docker is running both the server and the db enter the Cassandra db through
 docker ps
 ```
 
-The Cassandra instance will look something like the following:
+The ScyllaDB/Cassandra instance will look something like the following:
 
 ```
-b9ef8ea004cb   cassandra:latest                "docker-entrypoint.s…"   2 hours ago   Up 2 hours   7000-7001/tcp, 7199/tcp, 9160/tcp, 0.0.0.0:9042->9042/tcp 
+b9ef8ea004cb   scylladb/cassandra:latest                "docker-entrypoint.s…"   2 hours ago   Up 2 hours   7000-7001/tcp, 7199/tcp, 9160/tcp, 0.0.0.0:9042->9042/tcp 
 ```
 
-The Cassandra container ID in this instance is `b9ef8ea004cb` from here you can execute the following to enter the container and setup the DB
+The ScyllaDB/Cassandra container ID in this instance is `b9ef8ea004cb` from here you can execute the following to enter the container and setup the DB
 
 ```
-docker exec -it <cassandra-id> cqlsh
+docker exec -it <cassandra-or-scylladb-id> cqlsh
 ```
 
-Then once you are inside the Cassandra container run the following and utilize the db.sh file in this repo
-
-### For testing on local Cassandra with detached Docker
-
-```
-docker exec -it redwing_vector-cassandra-1 cqlsh
-```
-
-Then run cqlsh commands, todo: incorporate this into the default cassandra db build during provision
+Then run cqlsh commands
 
 ```
 CREATE KEYSPACE redwing_keyspace WITH replication = {'class': 'SimpleStrategy', 'replication_factor': 1};
