@@ -57,7 +57,13 @@
             <br>
             DB_IMAGE=cassandra:latest
             <br>
-            RUST_BACKTRACE=full            
+            RUST_BACKTRACE=full   
+            <br>
+            # For Cassandra Only
+            DB_STARTUP_CMD=""   
+            <br>
+            # For ScyllaDB Only
+            DB_STARTUP_CMD="--smp 1 --memory 750M --overprovisioned 1 --listen-address=0.0.0.0 --rpc-address=0.0.0.0 --broadcast-rpc-address=127.0.0.1"
         </p>
         <button id="copy-button6" onclick="copyToClipboard('#code-snippet6', 'copy-button6')" class="absolute top-7 right-6 text-xs bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-1 px-2 rounded">
             Copy

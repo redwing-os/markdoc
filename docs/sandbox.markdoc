@@ -18,6 +18,8 @@ CUSTOMER_ID=[your-customer-id]
 DB_PORT=9042
 DB_IMAGE=cassandra:latest
 RUST_BACKTRACE=full  
+
+# For Cassandra Only
 DB_STARTUP_CMD=""
 
 # For ScyllaDB Only
