@@ -23,6 +23,9 @@
       </div>
       <nav class="flex items-center">
         <!-- Toggle button for the sidebar -->
+        <span id="open-terminal-button" class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-blue-400 border border-blue-400">
+          <a href="#">Terminal</a><br>
+        </span>        
         <span class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-blue-400 border border-blue-400">
           <a href="#">v1.0.8</a><br>
         </span>
@@ -53,11 +56,10 @@
         class="sidebar border-r dark:border-gray-800 bg-gray-100 text-black dark:bg-black dark:text-white w-64 z-10 hidden md:block">
         {{> sidebar }}
       </div>
- 
       <!-- Modal with higher z-index -->
-      <!-- <div style="z-index:1000" class="absolute inset-0 lg:relative lg:order-3 hidden lg:block">
+      <div style="z-index:1000" class="absolute inset-0 lg:relative lg:order-3 hidden lg:block">
           {{> modal }}
-      </div> -->
+      </div>
       <div class="main-content min-h-screen dark:border-gray-800 dark:mr-8 text-black bg-white dark:bg-black dark:text-white w-full lg:w-3/4 lg:order-1 overflow-auto">
         {{> tab-component }}
       </div>
